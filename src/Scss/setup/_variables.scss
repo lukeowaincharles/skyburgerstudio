@@ -1,0 +1,55 @@
+// Breakpoints Declarations
+// - To add/extend new/custom breakpoints
+$grid-breakpoints: () !default;
+$grid-breakpoints: map-merge(
+  $grid-breakpoints,
+  (
+    xs: 0,
+    xsm: 375px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1440px
+  )
+);
+
+// Fonts - site specific declaration :
+// $font--whiskey: "whiskeybite-duo", sans-serif;
+// $font--Karla: "Karla", sans-serif;
+
+// $font--title: $font--whiskey;
+// $font--body: $font--Karla;
+
+// .whiskey {
+//   font-family: $font--whiskey;
+// }
+
+// h1,
+// h2,
+// h3 {
+//   font-family: $font--title;
+// }
+
+// body {
+//   font-family: $font--body;
+// }
+
+// Colors - site specific declaration
+$site-colors: (
+  green: #16AB59,
+  blue: #1663AB,
+  purple: #A041FF,
+  pink: #F131DE,
+  red: #FF4141,
+  orange: #FF9141,
+  yellow: #FFDB00
+);
+$colors: () !default;
+$colors: map-merge($colors, $site-colors);
+
+// Transitions - site specific declarations
+$transitions-types: (
+  general: 0.2s ease-in-out,
+  lazy-load: 0.5s ease-out
+);

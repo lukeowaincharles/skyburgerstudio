@@ -1,0 +1,43 @@
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+h3 {
+  font-size: 30px;
+}
+.copy--large {
+  font-size: 20px;
+}
+
+@include viewport-up(md) {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 44px;
+  }
+  h3 {
+    font-size: 33px;
+  }
+  .copy--large {
+    font-size: 22px;
+  }
+}
+
+@include viewport-up(lg) {
+  h1 {
+    font-size: 70px;
+  }
+  h2 {
+    font-size: 48px;
+  }
+  h3 {
+    font-size: 36px;
+  }
+  .copy--large {
+    font-size: 24px;
+  }
+}

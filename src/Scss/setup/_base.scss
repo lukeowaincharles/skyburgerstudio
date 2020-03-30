@@ -1,0 +1,24 @@
+a {
+  color: black;
+  transition: 300ms color ease-in-out;
+
+  &:hover,
+  &:active {
+    color: color(green);
+    text-decoration: none;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.underline {
+  text-decoration: underline;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
