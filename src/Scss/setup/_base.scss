@@ -22,3 +22,10 @@ img {
     text-decoration: none;
   }
 }
+
+.background {
+  &--black {
+    background-color: black;
+    color: white;
+  }
+}
