@@ -15,6 +15,7 @@ $grid-breakpoints: map-merge(
 );
 
 // Fonts - site specific declaration :
+$font--chivo: 'Chivo', sans-serif;
 // $font--whiskey: "whiskeybite-duo", sans-serif;
 // $font--Karla: "Karla", sans-serif;
 
@@ -25,11 +26,11 @@ $grid-breakpoints: map-merge(
 //   font-family: $font--whiskey;
 // }
 
-// h1,
-// h2,
-// h3 {
-//   font-family: $font--title;
-// }
+h1,
+h2,
+h3 {
+  font-family: $font--chivo;
+}
 
 // body {
 //   font-family: $font--body;
