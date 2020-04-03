@@ -8,3 +8,14 @@
     padding-bottom: 50px;
   }
 }
+
+.load {
+  opacity: 0;
+  transition: 200ms ease-in-out opacity, 400ms ease-in-out transform;
+  transform: translateY(-100px);
+}
+
+.hasLoaded {
+  opacity: 1;
+  transform: translateY(0);
+}
