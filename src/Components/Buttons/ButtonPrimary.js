@@ -1,10 +1,10 @@
 import React from 'react';
-// import { Link } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 function ButtonPrimary(props) {
   return (
     <React.Fragment>
-      <a
+      <Link
         className="btn btn-primary"
         to={props.link}
         href={props.link}
@@ -13,7 +13,7 @@ function ButtonPrimary(props) {
         offset={-100}
       >
         {props.title}
-      </a>
+      </Link>
     </React.Fragment>
   )
 }
