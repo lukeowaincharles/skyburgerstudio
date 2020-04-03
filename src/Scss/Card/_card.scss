@@ -2,4 +2,19 @@
   background: black;
   border: 10px solid white;
   border-radius: 0;
+  margin-bottom: 30px;
+  
+  &-body {
+    padding: 60px 30px 30px;
+
+    img {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include viewport-up(md) {
+  .card {
+    margin-bottom: 0;
+  }
 }
