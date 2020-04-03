@@ -6,14 +6,14 @@ function WhoWeAre() {
   const CONTENT = WhoWeAreData.content;
   const cards = CONTENT.map((item, index) => {
     return (
-      <React.Fragment key={index}>
+      <div className="col-md-6" key={index}>
         <Card
           cardImage={item.image}
           cardImageAlt={item.alt}
           name={item.name}
           text={item.text}
         />
-      </React.Fragment>
+      </div>
     );
   });
 
@@ -23,7 +23,9 @@ function WhoWeAre() {
       id="whoWeAre"
       name="#whoWeAre"
     >
-      <div className="container">{cards}</div>
+      <div className="container">
+        <div className="row">{cards}</div>
+      </div>
     </section>
   );
 }
