@@ -10,7 +10,7 @@ function ButtonPrimary(props) {
         href={props.link}
         smooth={true}
         duration={800}
-        offset={-100}
+        offset={0}
       >
         {props.title}
       </Link>
