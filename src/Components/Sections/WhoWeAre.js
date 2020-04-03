@@ -12,6 +12,8 @@ function WhoWeAre() {
           cardImageAlt={item.alt}
           name={item.name}
           text={item.text}
+          title={"Contact"}
+          link={item.link}
         />
       </div>
     );

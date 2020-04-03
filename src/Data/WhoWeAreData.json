@@ -4,13 +4,15 @@
       "name": "Liz Hamburger",
       "text": "Digital Product Designer with 7 years experience in transforming business’",
       "image": "/images/liz.svg",
-      "alt": "Liz Hamburger photo"
+      "alt": "Liz Hamburger photo",
+      "link": "https://elizabethhamburger.com/"
     },
     {
       "name": "Luke Charles",
       "text": "Frontend Developer with a passion for clean code and solving problems",
       "image": "",
-      "alt": "Luke Charles photo"
+      "alt": "Luke Charles photo",
+      "link": "https://www.lukeowaincharles.co.uk/"
     }
   ]
 }
