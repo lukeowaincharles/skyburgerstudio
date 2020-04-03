@@ -11,7 +11,7 @@ function FindOutMore() {
       <div className="container">
         <h1>{CONTENT[0].title}</h1>
         <ButtonPrimary 
-          link={"this"}
+          link={"#whoWeAre"}
           title={"Find out more"}
         />
       </div>
