@@ -1,0 +1,16 @@
+{
+  "content" : [
+    {
+      "name": "Liz Hamburger",
+      "text": "Digital Product Designer with 7 years experience in transforming business’",
+      "image": "",
+      "alt": "Liz Hamburger photo"
+    },
+    {
+      "name": "Luke Charles",
+      "text": "Frontend Developer with a passion for clean code and solving problems",
+      "image": "",
+      "alt": "Luke Charles photo"
+    }
+  ]
+}
