@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import FindOutMoreData from "../../Data/FindOutMoreData.json";
-// import * as Icons from "../Icons";
+import * as Icons from "../Icons";
 
 function FindOutMore() {
   const CONTENT = FindOutMoreData.content,
@@ -30,9 +30,22 @@ function FindOutMore() {
           classes={`${"load"} ${fadeIn ? "hasLoaded" : ""}`}
         />
       </div>
-      {/* {Icons.Code}
-      {Icons.Hash}
-      {Icons.Heart} */}
+      <div className="icons">
+        <div className="icons__wrapper">
+          {Icons.Code}
+          {Icons.Plus}
+          {Icons.Heart}
+          {Icons.Pencil}
+          {Icons.No}
+          {Icons.Ya}
+          {Icons.Ok}
+          {Icons.Dots}
+          {Icons.Cursor}
+          {Icons.Exclaim}
+          {Icons.Heart2}
+          {Icons.Hash}
+        </div>
+      </div>
     </section>
   );
 }
