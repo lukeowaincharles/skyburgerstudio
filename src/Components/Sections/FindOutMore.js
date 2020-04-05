@@ -5,16 +5,24 @@ import * as Icons from "../Icons";
 
 function FindOutMore() {
   const CONTENT = FindOutMoreData.content,
-    [fadeIn, setFadeIn] = useState(false);
+    [fadeIn, setFadeIn] = useState(false),
+    [hasTransform, setTransform] = useState(false);
 
   function handleFadeIn() {
     setTimeout(() => {
       setFadeIn(true);
-    }, 2000);
+    }, 500);
+  }
+
+  function handleTransform() {
+    setTimeout(() => {
+      setTransform(true);
+    }, 1000)
   }
 
   useEffect(() => {
     handleFadeIn();
+    handleTransform();
   });
 
   return (
@@ -30,7 +38,7 @@ function FindOutMore() {
           classes={`${"load"} ${fadeIn ? "hasLoaded" : ""}`}
         />
       </div>
-      <div className="icons">
+      <div className={`${"icons"} ${hasTransform ? "hasTransform" : ""}`}>
         <div className="icons__wrapper">
           {Icons.Code}
           {Icons.Plus}
