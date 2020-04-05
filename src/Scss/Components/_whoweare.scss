@@ -1,10 +1,18 @@
 .who-we-are {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
   p {
     font-size: 18px;
+    margin-bottom: 34px;
+    min-height: 81px;
+  }
+}
+
+@include viewport-up(md) {
+  .who-we-are {
+    height: 100vh;
   }
 }
