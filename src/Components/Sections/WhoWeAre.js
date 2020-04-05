@@ -7,7 +7,7 @@ function WhoWeAre() {
   const cards = CONTENT.map((item, index) => {
     let offset = "";
     if (index === 1) {
-      offset = "offset-md-1";
+      offset = "offset-md-2";
     }
     return (
       <div className={`${"col-md-5"} ${offset}`} key={index}>
