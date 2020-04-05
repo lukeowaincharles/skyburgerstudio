@@ -16,6 +16,9 @@
 @include viewport-up(md) {
   .card {
     margin-bottom: 0;
+    max-width: 400px;
+    min-height: 580px;
+    margin: 0 auto;
 
     &-body {
       padding: 60px 50px 40px;
