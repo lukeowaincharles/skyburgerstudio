@@ -5,8 +5,12 @@ import WhoWeAreData from "../../Data/WhoWeAreData.json";
 function WhoWeAre() {
   const CONTENT = WhoWeAreData.content;
   const cards = CONTENT.map((item, index) => {
+    let offset = "";
+    if (index === 1) {
+      offset = "offset-md-1";
+    }
     return (
-      <div className="col-md-6" key={index}>
+      <div className={`${"col-md-5"} ${offset}`} key={index}>
         <Card
           cardImage={item.image}
           cardImageAlt={item.alt}
