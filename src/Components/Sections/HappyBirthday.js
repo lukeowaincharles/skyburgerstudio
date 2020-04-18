@@ -40,7 +40,8 @@ if (PARAMS.has("textColor")) {
 }
 
 function HappyBirthday() {
-  const [fadeIn, setFadeIn] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false),
+    [balloonShow, setBalloonShow] = useState(false);
 
   function handleFadeIn() {
     setTimeout(() => {
@@ -48,8 +49,15 @@ function HappyBirthday() {
     }, 1500);
   }
 
+  function handleBalloons() {
+    setTimeout(() => {
+      setBalloonShow(true);
+    }, 2300);
+  }
+
   useEffect(() => {
     handleFadeIn();
+    handleBalloons();
 
     PARAMS.set("name", name);
     window.history.replaceState({ name: name }, "", `?${PARAMS.toString()}`);
@@ -113,10 +121,20 @@ function HappyBirthday() {
   };
 
   return (
-    <section className={`${"happy-birthday"} ${fadeIn ? "isShown" : "noShowAmigo"}`} style={styles.bgColor}>
-      <div className="container">
+    <section
+      className={`${"happy-birthday"} ${fadeIn ? "isShown" : "noShowAmigo"}`}
+      style={styles.bgColor}
+    >
+      <div className="container text-center">
         <div className="envelope">
           <h3>To {name}</h3>
+        </div>
+        <div className={`${"balloon-wrapper"} ${balloonShow ? "isPartyTime" : "noParty"} `}>
+          <div className="balloon"></div>
+          <div className="balloon"></div>
+          <div className="balloon"></div>
+          <div className="balloon"></div>
+          <div className="balloon"></div>
         </div>
         <div
           className="card text-center"
