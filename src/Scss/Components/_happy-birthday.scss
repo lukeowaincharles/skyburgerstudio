@@ -47,6 +47,8 @@
     left: 0;
     animation: floatUp 5s ease-in-out;
     transform: translateY(0);
+    height: 100%;
+    overflow: hidden;
 
     &.isPartyTime {
       .balloon {
@@ -174,6 +176,7 @@
   .happy-birthday {
     .balloon-wrapper {
       position: relative;
+      overflow: initial;
     }
   }
 }
