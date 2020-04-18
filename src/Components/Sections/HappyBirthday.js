@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import * as Icons from "../Icons";
 
 // URLSearchParams is not IE compatible, there is a polyfill
 const PARAMS = new URLSearchParams(window.location.search);
@@ -9,9 +10,9 @@ if (PARAMS.has("name")) {
   name = PARAMS.get("name");
 }
 
-let recipient = "";
-if (PARAMS.has("recipient")) {
-  recipient = PARAMS.get("recipient");
+let sender = "";
+if (PARAMS.has("sender")) {
+  sender = PARAMS.get("sender");
 }
 
 let message = "Have an amazing birthday!";
@@ -39,9 +40,20 @@ if (PARAMS.has("textColor")) {
   textColor = PARAMS.get("textColor");
 }
 
+const default_settings = {
+  name,
+  sender,
+  message,
+  backgroundColor,
+  cardColor,
+  titleColor,
+  textColor,
+};
+
 function HappyBirthday() {
   const [fadeIn, setFadeIn] = useState(false),
-    [balloonShow, setBalloonShow] = useState(false);
+    [balloonShow, setBalloonShow] = useState(false),
+    [form, setValues] = useState(default_settings);
 
   function handleFadeIn() {
     setTimeout(() => {
@@ -59,12 +71,16 @@ function HappyBirthday() {
     handleFadeIn();
     handleBalloons();
 
-    PARAMS.set("name", name);
-    window.history.replaceState({ name: name }, "", `?${PARAMS.toString()}`);
-
-    PARAMS.set("recipient", recipient);
+    PARAMS.set("name", form.name);
     window.history.replaceState(
-      { recipient: recipient },
+      { name: form.name },
+      "",
+      `?${PARAMS.toString()}`
+    );
+
+    PARAMS.set("sender", sender);
+    window.history.replaceState(
+      { sender: sender },
       "",
       `?${PARAMS.toString()}`
     );
@@ -103,7 +119,17 @@ function HappyBirthday() {
       "",
       `?${PARAMS.toString()}`
     );
-  });
+  }, [
+    form.name
+  ]);
+
+  function updateParams(e, data) {
+    setValues({
+      ...form,
+      // name: data.value,
+    });
+    console.log(form.name)
+  }
 
   const styles = {
     bgColor: {
@@ -129,7 +155,11 @@ function HappyBirthday() {
         <div className="envelope">
           <h3>To {name}</h3>
         </div>
-        <div className={`${"balloon-wrapper"} ${balloonShow ? "isPartyTime" : "noParty"} `}>
+        <div
+          className={`${"balloon-wrapper"} ${
+            balloonShow ? "isPartyTime" : "noParty"
+          } `}
+        >
           <div className="balloon"></div>
           <div className="balloon"></div>
           <div className="balloon"></div>
@@ -144,13 +174,36 @@ function HappyBirthday() {
             <div className="card-content">
               <h3>To {name}</h3>
               <p>{message}</p>
-              <h5>from {recipient}</h5>
+              <h5>from {sender}</h5>
             </div>
           </div>
         </div>
         <h1 className="text-center" style={styles.titleColor}>
-          Happy Birthday {name}!!
+          Happy Birthday {name}!!!
         </h1>
+      </div>
+      <div className="settings">
+        <div className="settings__icon">{Icons.Settings}</div>
+        <div className="settings__box">
+          <div className="settings__name">
+            <label htmlFor="name">To:</label>
+            <input
+              onChange={updateParams}
+              // onInput={updateParams}
+              placeholder="Name"
+              type="text"
+              name="name"
+            />
+          </div>
+          <div className="settings__message">
+            <label htmlFor="message">Message:</label>
+            <input defaultValue={message} type="text" name="message" />
+          </div>
+          <div className="settings__sender">
+            <label htmlFor="from">From:</label>
+            <input placeholder="Your name/s" type="text" name="from" />
+          </div>
+        </div>
       </div>
     </section>
   );

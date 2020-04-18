@@ -132,6 +132,18 @@
       }
     }
   }
+
+  .settings {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+
+    &__box {
+      background-color: white;
+      padding: 10px;
+    }
+  }
 }
 
 @keyframes floatUp {
