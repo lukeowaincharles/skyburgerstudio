@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // URLSearchParams is not IE compatible, there is a polyfill
 const PARAMS = new URLSearchParams(window.location.search);
@@ -40,7 +40,17 @@ if (PARAMS.has("textColor")) {
 }
 
 function HappyBirthday() {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  function handleFadeIn() {
+    setTimeout(() => {
+      setFadeIn(true);
+    }, 1500);
+  }
+
   useEffect(() => {
+    handleFadeIn();
+
     PARAMS.set("name", name);
     window.history.replaceState({ name: name }, "", `?${PARAMS.toString()}`);
 
@@ -103,11 +113,11 @@ function HappyBirthday() {
   };
 
   return (
-    <section className="happy-birthday" style={styles.bgColor}>
+    <section className={`${"happy-birthday"} ${fadeIn ? "isShown" : "noShowAmigo"}`} style={styles.bgColor}>
       <div className="container">
-        <h1 className="text-center" style={styles.titleColor}>
-          Happy Birthday {name}!!
-        </h1>
+        <div className="envelope">
+          <h3>To {name}</h3>
+        </div>
         <div
           className="card text-center"
           style={{ ...styles.cardColor, ...styles.textColor }}
@@ -120,6 +130,9 @@ function HappyBirthday() {
             </div>
           </div>
         </div>
+        <h1 className="text-center" style={styles.titleColor}>
+          Happy Birthday {name}!!
+        </h1>
       </div>
     </section>
   );
