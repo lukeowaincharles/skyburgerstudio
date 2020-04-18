@@ -4,6 +4,53 @@
   height: 100vh;
 
   h1 {
-    margin-bottom: 45px;
+    margin-top: 45px;
+    opacity: 0;
+    transition: 500ms ease-in-out opacity;
+    position: absolute;
+  }
+
+  &.isShown {
+    h1,
+    .card {
+      position: relative;
+      opacity: 1;
+    }
+
+    .envelope {
+      display: none;
+    }
+  }
+
+  .envelope {
+    background-color: white;
+    padding: 60px;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms ease-in-out transform;
+    animation: acrossThrough 1.5s ease-in-out;
+    transform: translateX(1024px);
+  }
+
+  .card {
+    position: absolute;
+    opacity: 0;
+    transition: 500ms ease-in-out opacity;
+  }
+}
+
+@keyframes acrossThrough {
+  0% {
+    transform: translateX(-1024px);
+  }
+  10%,
+  90% {
+    transform: translateX(0);
+
+  }
+  100% {
+    transform: translateX(1024px);
   }
 }
