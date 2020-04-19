@@ -5,12 +5,12 @@ import * as Icons from "../Icons";
 const PARAMS = new URLSearchParams(window.location.search);
 
 // initialise/set the params we want to control
-let name = "";
+let name = "'Recipient'";
 if (PARAMS.has("name")) {
   name = PARAMS.get("name");
 }
 
-let sender = "";
+let sender = "'Your name'";
 if (PARAMS.has("sender")) {
   sender = PARAMS.get("sender");
 }
@@ -190,7 +190,13 @@ function HappyBirthday() {
     >
       <div className="container text-center">
         <div className="envelope">
-          <h3>To {name}</h3>
+          <div className="stamp"></div>
+          <h3>{name}</h3>
+          <div className="address-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
         <div
           className={`${"balloon-wrapper"} ${
