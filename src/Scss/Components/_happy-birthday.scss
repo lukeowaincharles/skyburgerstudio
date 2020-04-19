@@ -254,5 +254,15 @@
       position: relative;
       overflow: initial;
     }
+
+    .settings {
+      top: 50%;
+      bottom: unset;
+      transform: translateY(-50%);
+
+      &__icon {
+        text-align: right;
+      }
+    }
   }
 }
