@@ -15,5 +15,6 @@
 @include viewport-up(md) {
   .who-we-are {
     height: 100vh;
+    overflow: hidden;
   }
 }
