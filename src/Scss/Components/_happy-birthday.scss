@@ -179,10 +179,33 @@
     bottom: 0;
     right: 0;
     z-index: 100;
+    padding-right: 15px;
 
     &__box {
       background-color: white;
       padding: 10px;
+      transition: opacity ease-in-out 300ms;
+      border-radius: 6px;
+
+      &.isOpen {
+        opacity: 1;
+      }
+
+      &.isClosed {
+        opacity: 0;
+      }
+    }
+
+    &__icon {
+      padding-top: 15px;
+      cursor: pointer;
+    }
+
+    &__pill {
+      margin-left: 10px;
+      background-color: white;
+      border-radius: 25px;
+      padding: 3px 10px;
     }
   }
 }

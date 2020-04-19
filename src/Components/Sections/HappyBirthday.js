@@ -53,6 +53,7 @@ const default_settings = {
 function HappyBirthday() {
   const [fadeIn, setFadeIn] = useState(false),
     [balloonShow, setBalloonShow] = useState(false),
+    [isOpen, setOpen] = useState(true),
     [form, setValues] = useState(default_settings);
 
   function handleFadeIn() {
@@ -65,6 +66,10 @@ function HappyBirthday() {
     setTimeout(() => {
       setBalloonShow(true);
     }, 2300);
+  }
+
+  function handleClick() {
+    setOpen(!isOpen);
   }
 
   useEffect(() => {
@@ -226,8 +231,7 @@ function HappyBirthday() {
         </h1>
       </div>
       <div className="settings">
-        <div className="settings__icon">{Icons.Settings}</div>
-        <div className="settings__box">
+        <div className={`${"settings__box"} ${isOpen ? "isOpen" : "isClosed"}`}>
           <div className="settings__name">
             <label htmlFor="name">To:</label>
             <input
@@ -247,6 +251,15 @@ function HappyBirthday() {
             <label htmlFor="from">From:</label>
             <input placeholder="Your name/s" type="text" name="from" />
           </div>
+        </div>
+        <div
+          className="settings__icon"
+          onClick={() => {
+            handleClick();
+          }}
+        >
+          {Icons.Settings}
+          <span className="settings__pill">{`${isOpen ? "Close" : "Open"}`}</span>
         </div>
       </div>
     </section>
