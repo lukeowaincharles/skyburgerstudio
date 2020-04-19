@@ -6,6 +6,11 @@
 <rect x="-132.553" y="-84.4697" width="386.613" height="515.267" fill="url(#pattern0)"/>
 </g>
 <circle cx="70.5" cy="70.5" r="65.5" stroke="white" stroke-width="10"/>
+<circle cx="122.5" cy="118.5" r="22.5" fill="#16AB59"/>
+<circle cx="122.5" cy="118.5" r="20.9645" stroke="white" stroke-width="3.07095"/>
+<line x1="125.531" y1="108.906" x2="119.543" y2="128.902" stroke="white" stroke-width="3.07095"/>
+<path d="M115.811 125.341L108.818 118.348L115.811 111.507" stroke="white" stroke-width="3.07095"/>
+<path d="M129.189 111.659L136.182 118.652L129.189 125.493" stroke="white" stroke-width="3.07095"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0" transform="translate(0 -0.000210255) scale(0.000651042 0.000488487)"/>
