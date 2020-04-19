@@ -119,17 +119,54 @@ function HappyBirthday() {
       "",
       `?${PARAMS.toString()}`
     );
-  }, [
-    form.name
-  ]);
+  }, [form.name]);
 
-  function updateParams(e, data) {
-    setValues({
-      ...form,
-      // name: data.value,
-    });
-    console.log(form.name)
-  }
+  // function handleFormPath(path) {
+  //   setValues({ ...form });
+  //   path = path + "?" + PARAMS.toString();
+  //   // return <Redirect to={path} push />;
+  // }
+
+  // function updateParams(e, data) {
+  //   if (data.name === "name") {
+  //     setValues({
+  //       ...form,
+  //       name: data.value,
+  //     });
+
+  //   }
+  //   // console.log(form.name)
+  //   // console.log(data)
+  //   console.log(name);
+  //   return {
+  //     name: form.name,
+  //   };
+
+  // }
+
+  // const DATA = {
+  //   Name: form.name
+  // }
+
+  // function objectToParams(data) {
+  //   return Object.keys(data)
+  //     .map((key) => `${key}=${encodeURIComponent(data[key])}`)
+  //     .join("&");
+  // }
+
+  // function updatePath() {
+  //   let path = "";
+  //   // path = path + "?" + PARAMS.toString();
+  //   setValues({ ...form });
+  //   window.location.href = path;
+
+  //   let params_obj = {
+  //     name: DATA.Name,
+  //   };
+  //   return path + "?" + objectToParams(params_obj);
+  // }
+
+  // console.log(updatePath)
 
   const styles = {
     bgColor: {
@@ -188,8 +225,9 @@ function HappyBirthday() {
           <div className="settings__name">
             <label htmlFor="name">To:</label>
             <input
-              onChange={updateParams}
-              // onInput={updateParams}
+              id="Name"
+              // onChange={updateParams}
+              // onInput={updatePath}
               placeholder="Name"
               type="text"
               name="name"
