@@ -1,4 +1,5 @@
 import React from 'react';
+import { Event } from "../Tracking";
 
 function ButtonSocial(props) {
   return (
@@ -8,6 +9,9 @@ function ButtonSocial(props) {
         href={props.link}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => {
+          Event("Social", `${props.link}`, `${props.title}`)
+        }}
       >
         {props.title}
       </a>
