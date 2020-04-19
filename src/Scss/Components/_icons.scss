@@ -19,6 +19,11 @@
     }
 
     &--who {
+      .icon {
+        right: initial;
+        opacity: 1;
+      }
+
       &.hasMoved {
         .icon {
           &--code {
@@ -29,74 +34,74 @@
           &--plus {
             right: 82%;
             z-index: 1;
-            // animation-delay: -0.5s;
+            animation-delay: 2.5s;
           }
   
           &--heart {
             right: 72%;
             z-index: 5;
-            // animation-delay: -1s;
+            animation-delay: 1.35s;
           }
   
           &--pencil {
             right: 63%;
-            // animation-delay: -0.75s;
+            animation-delay: 2.75s;
           }
   
           &--no {
             right: 55%;
             z-index: 5;
-            // animation-delay: -1s;
+            animation-delay: 1s;
           }
   
           &--ya {
             right: 48%;
-            // animation-delay: -1.2s;
+            animation-delay: 1.25s;
           }
   
           &--dots {
             right: 40%;
             z-index: 3;
-            // animation-delay: -0.8s;
+            animation-delay: 1.75s;
           }
   
           &--ok {
             right: 34%;
             z-index: 4;
-            // animation-delay: -0.65s;
+            animation-delay: 0.1s;
           }
   
           &--cursor {
             right: 24%;
             z-index: 2;
-            // animation-delay: -0.9s;
+            animation-delay: 0.75s;
           }
   
           &--hash {
             right: 16%;
             z-index: 0;
-            // animation-delay: -1.5s;
+            animation-delay: 1.5s;
           }
   
           &--exclaim {
             right: 9%;
             z-index: 1;
-            // animation-delay: -0.2s;
+            animation-delay: 0.25s;
           }
   
           &--heart2 {
             right: 0;
             z-index: 1;
-            // animation-delay: -0.5575s;
+            animation-delay: 0.5s;
           }
         }
       }
 
       .icon {
         opacity: 1;
-        transform: translateY(0) translateX(0);
-        animation: roll 5s ease-in-out;
-        right: -100%;
+        transform: translateY(0);
+        animation: fallDown 5s ease-in-out infinite;
+        // right: -100%;
       }
     }
 
@@ -182,6 +187,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes fallDown {
+  0% {
+    // opacity: 0;
+    transform: translateY(-1024px);
+  }
+  100% {
+    transform: translateY(400px);
   }
 }
 
