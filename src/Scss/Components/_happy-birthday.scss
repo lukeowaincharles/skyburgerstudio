@@ -180,9 +180,24 @@
     right: 0;
     z-index: 100;
     padding-right: 15px;
+    opacity: 0;
+    transition: opacity ease-in-out 2s;
+
+    &.isDelayed {
+      opacity: 1;
+    }
+
+    &__input {
+      input {
+        border: none;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+      }
+    }
 
     &__box {
-      background-color: white;
+      background-color: #eeeeee;
       padding: 10px;
       transition: opacity ease-in-out 300ms;
       border-radius: 6px;
@@ -256,9 +271,9 @@
     }
 
     .settings {
-      top: 50%;
+      top: 75%;
       bottom: unset;
-      transform: translateY(-50%);
+      transform: translateY(-75%);
 
       &__icon {
         text-align: right;
