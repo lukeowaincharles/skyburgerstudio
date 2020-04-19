@@ -25,14 +25,55 @@
 
   .envelope {
     background-color: white;
+    position: relative;
     padding: 60px;
     min-height: 350px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: 500ms ease-in-out transform;
     animation: acrossThrough 1.5s ease-in-out;
     transform: translateX(1024px);
+
+    .stamp {
+      background-color: color(red);
+      border: 3px dashed white;
+      height: 70px;
+      width: 60px;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url("../../Assets/images/queen.svg");
+        background-repeat: no-repeat;
+        width: 45px;
+        height: 60px;
+      }
+    }
+
+    .address-lines {
+      span {
+        background-color: black;
+        display: block;
+        height: 5px;
+        width: 250px;
+        margin-bottom: 20px;
+
+        &:nth-child(2) {
+          width: 210px;
+        }
+
+        &:nth-child(3) {
+          width: 80px;
+        }
+      }
+    }
   }
 
   .card {
@@ -98,7 +139,7 @@
 
     &:nth-child(2) {
       background: color(green);
-      animation-duration:3.5s;
+      animation-duration: 3.5s;
 
       &:before {
         color: color(green);
@@ -107,7 +148,7 @@
 
     &:nth-child(3) {
       background: color(purple);
-      animation-duration:2s;
+      animation-duration: 2s;
 
       &:before {
         color: color(purple);
@@ -116,7 +157,7 @@
 
     &:nth-child(4) {
       background: color(pink);
-      animation-duration:4s;
+      animation-duration: 4s;
 
       &:before {
         color: color(pink);
@@ -125,7 +166,7 @@
 
     &:nth-child(5) {
       background: color(orange);
-      animation-duration:2.5s;
+      animation-duration: 2.5s;
 
       &:before {
         color: color(orange);
