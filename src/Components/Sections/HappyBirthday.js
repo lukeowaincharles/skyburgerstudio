@@ -52,6 +52,7 @@ const default_settings = {
 
 function HappyBirthday() {
   const [fadeIn, setFadeIn] = useState(false),
+    [fadeDelay, setFadeDelay] = useState(false),
     [balloonShow, setBalloonShow] = useState(false),
     [isOpen, setOpen] = useState(true),
     [form, setValues] = useState(default_settings);
@@ -60,6 +61,12 @@ function HappyBirthday() {
     setTimeout(() => {
       setFadeIn(true);
     }, 1500);
+  }
+
+  function handleFadInDelay() {
+    setTimeout(() => {
+      setFadeDelay(true);
+    }, 5000);
   }
 
   function handleBalloons() {
@@ -75,6 +82,7 @@ function HappyBirthday() {
   useEffect(() => {
     handleFadeIn();
     handleBalloons();
+    handleFadInDelay();
 
     PARAMS.set("name", form.name);
     window.history.replaceState(
@@ -230,9 +238,9 @@ function HappyBirthday() {
           Happy Birthday {name}!!!
         </h1>
       </div>
-      <div className="settings">
+      <div className={`${"settings"} ${fadeDelay ? "isDelayed" : "noShowAmigo"}`}>
         <div className={`${"settings__box"} ${isOpen ? "isOpen" : "isClosed"}`}>
-          <div className="settings__name">
+          <div className="settings__input settings__name">
             <label htmlFor="name">To:</label>
             <input
               id="Name"
@@ -243,13 +251,36 @@ function HappyBirthday() {
               name="name"
             />
           </div>
-          <div className="settings__message">
+          <div className="settings__input settings__message">
             <label htmlFor="message">Message:</label>
             <input defaultValue={message} type="text" name="message" />
           </div>
-          <div className="settings__sender">
+          <div className="settings__input settings__sender">
             <label htmlFor="from">From:</label>
             <input placeholder="Your name/s" type="text" name="from" />
+          </div>
+          <div className="settings__input settings__background">
+            <label htmlFor="backgroundColor">Background Colour</label>
+            <input
+              defaultValue={backgroundColor}
+              type="text"
+              name="backgroundColor"
+            />
+          </div>
+          <div className="settings__input settings__text">
+            <label htmlFor="text">Card text colour:</label>
+            <input defaultValue={textColor} type="text" name="text" />
+          </div>
+          <div className="settings__input settings__card">
+            <label htmlFor="card">Card colour:</label>
+            <input defaultValue={cardColor} type="text" name="card" />
+          </div>
+          <div className="settings__input settings__birthday">
+            <label htmlFor="happy">Happy Birthday colour:</label>
+            <input defaultValue={titleColor} type="text" name="happy" />
+          </div>
+          <div className="settings__submit">
+            <input className="btn btn-primary" type="submit" />
           </div>
         </div>
         <div
@@ -259,7 +290,9 @@ function HappyBirthday() {
           }}
         >
           {Icons.Settings}
-          <span className="settings__pill">{`${isOpen ? "Close" : "Open"}`}</span>
+          <span className="settings__pill">{`${
+            isOpen ? "Close" : "Open"
+          }`}</span>
         </div>
       </div>
     </section>
