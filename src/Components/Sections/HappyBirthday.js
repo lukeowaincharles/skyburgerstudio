@@ -1,138 +1,79 @@
 import React, { useEffect, useState } from "react";
 import * as Icons from "../Icons";
 
-// URLSearchParams is not IE compatible, there is a polyfill
-const PARAMS = new URLSearchParams(window.location.search);
-
-// initialise/set the params we want to control
-let name = "'Recipient'";
-if (PARAMS.has("name")) {
-  name = PARAMS.get("name");
-}
-
-let sender = "'Your name'";
-if (PARAMS.has("sender")) {
-  sender = PARAMS.get("sender");
-}
-
-let message = "Have an amazing birthday!";
-if (PARAMS.has("message")) {
-  message = PARAMS.get("message");
-}
-
-let backgroundColor = "black";
-if (PARAMS.has("backgroundColor")) {
-  backgroundColor = PARAMS.get("backgroundColor");
-}
-
-let cardColor = "";
-if (PARAMS.has("cardColor")) {
-  cardColor = PARAMS.get("cardColor");
-}
-
-let titleColor = "white";
-if (PARAMS.has("titleColor")) {
-  titleColor = PARAMS.get("titleColor");
-}
-
-let textColor = "white";
-if (PARAMS.has("textColor")) {
-  textColor = PARAMS.get("textColor");
-}
+// Setup some default values
+let name = "'Recipient'",
+message = "Have an amazing birthday!",
+sender = "'Your name'",
+backgroundColor = "black",
+titleColor = "white",
+cardColor = "",
+textColor = "white";
 
 const default_settings = {
   name,
-  sender,
   message,
+  sender,
   backgroundColor,
   cardColor,
   titleColor,
   textColor,
 };
 
-function HappyBirthday() {
+// URLSearchParams is not IE compatible, there is a polyfill
+const PARAMS = new URLSearchParams(window.location.search);
+Object.keys(default_settings).forEach( (i) => {
+  if (PARAMS.has(i)) {
+    i = PARAMS.get(i);
+  }
+});
+
+const HappyBirthday = () => {
   const [fadeIn, setFadeIn] = useState(false),
     [fadeDelay, setFadeDelay] = useState(false),
     [balloonShow, setBalloonShow] = useState(false),
     [isOpen, setOpen] = useState(true),
     [form, setValues] = useState(default_settings);
 
-  function handleFadeIn() {
+  const handleFadeIn = () => {
     setTimeout(() => {
       setFadeIn(true);
     }, 1500);
   }
 
-  function handleFadInDelay() {
+  const handleFadeInDelay = () => {
     setTimeout(() => {
       setFadeDelay(true);
     }, 5000);
   }
 
-  function handleBalloons() {
+  const handleBalloons = () => {
     setTimeout(() => {
       setBalloonShow(true);
     }, 2300);
   }
 
-  function handleClick() {
+  const handleClick = () => {
     setOpen(!isOpen);
+  }
+
+  const updateParams = () => {
+    Object.keys(form).forEach( (i) => {
+      PARAMS.set(i, form[i]);
+      window.history.replaceState(
+        { i:  form[i]},
+        "",
+        `?${PARAMS.toString()}`
+      );
+    });
   }
 
   useEffect(() => {
     handleFadeIn();
     handleBalloons();
-    handleFadInDelay();
-
-    PARAMS.set("name", form.name);
-    window.history.replaceState(
-      { name: form.name },
-      "",
-      `?${PARAMS.toString()}`
-    );
-
-    PARAMS.set("sender", sender);
-    window.history.replaceState(
-      { sender: sender },
-      "",
-      `?${PARAMS.toString()}`
-    );
-
-    PARAMS.set("message", message);
-    window.history.replaceState(
-      { message: message },
-      "",
-      `?${PARAMS.toString()}`
-    );
-
-    PARAMS.set("backgroundColor", backgroundColor);
-    window.history.replaceState(
-      { backgroundColor: backgroundColor },
-      "",
-      `?${PARAMS.toString()}`
-    );
-
-    PARAMS.set("cardColor", cardColor);
-    window.history.replaceState(
-      { cardColor: cardColor },
-      "",
-      `?${PARAMS.toString()}`
-    );
-
-    PARAMS.set("titleColor", titleColor);
-    window.history.replaceState(
-      { titleColor: titleColor },
-      "",
-      `?${PARAMS.toString()}`
-    );
-
-    PARAMS.set("textColor", textColor);
-    window.history.replaceState(
-      { textColor: textColor },
-      "",
-      `?${PARAMS.toString()}`
-    );
-  }, [form.name]);
+    handleFadeInDelay();
+    updateParams();
+  });
 
   // function handleFormPath(path) {
   //   setValues({ ...form });
@@ -181,18 +122,34 @@ function HappyBirthday() {
 
   // console.log(updatePath)
 
+  const handleInputChange = (e) => {
+    setValues({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  const handleFormSubmit = (e) => {
+    console.log('submitted form');
+    e.preventDefault(); // Prevent page from reloading on submit
+  }
+
+  const checkState = () => {
+    console.log(form);
+  }
+
   const styles = {
     bgColor: {
-      backgroundColor: `${backgroundColor}`,
+      backgroundColor: `${form.backgroundColor}`,
     },
     cardColor: {
-      backgroundColor: `${cardColor}`,
+      backgroundColor: `${form.cardColor}`,
     },
     titleColor: {
-      color: `${titleColor}`,
+      color: `${form.titleColor}`,
     },
     textColor: {
-      color: `${textColor}`,
+      color: `${form.textColor}`,
     },
   };
 
@@ -204,7 +161,7 @@ function HappyBirthday() {
       <div className="container text-center">
         <div className="envelope">
           <div className="stamp"></div>
-          <h3>{name}</h3>
+          <h3>{form.name}</h3>
           <div className="address-lines">
             <span></span>
             <span></span>
@@ -214,7 +171,7 @@ function HappyBirthday() {
         <div
           className={`${"balloon-wrapper"} ${
             balloonShow ? "isPartyTime" : "noParty"
-          } `}
+            } `}
         >
           <div className="balloon"></div>
           <div className="balloon"></div>
@@ -228,14 +185,14 @@ function HappyBirthday() {
         >
           <div className="card-body">
             <div className="card-content">
-              <h3>To {name}</h3>
-              <p>{message}</p>
-              <h5>from {sender}</h5>
+              <h3>To {form.name}</h3>
+              <p>{form.message}</p>
+              <h5>from {form.sender}</h5>
             </div>
           </div>
         </div>
         <h1 className="text-center" style={styles.titleColor}>
-          Happy Birthday {name}!!!
+          Happy Birthday {form.name}!!!
         </h1>
       </div>
       <div className={`${"settings"} ${fadeDelay ? "isDelayed" : "noShowAmigo"}`}>
@@ -249,15 +206,17 @@ function HappyBirthday() {
               placeholder="Name"
               type="text"
               name="name"
+              defaultValue={form.name}
+              onChange={handleInputChange}
             />
           </div>
           <div className="settings__input settings__message">
             <label htmlFor="message">Message:</label>
-            <input defaultValue={message} type="text" name="message" />
+            <input defaultValue={message} type="text" name="message" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__sender">
             <label htmlFor="from">From:</label>
-            <input placeholder="Your name/s" type="text" name="from" />
+            <input placeholder="Your name/s" type="text" name="sender" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__background">
             <label htmlFor="backgroundColor">Background Colour</label>
@@ -265,23 +224,25 @@ function HappyBirthday() {
               defaultValue={backgroundColor}
               type="text"
               name="backgroundColor"
+              onChange={handleInputChange}
             />
           </div>
           <div className="settings__input settings__text">
             <label htmlFor="text">Card text colour:</label>
-            <input defaultValue={textColor} type="text" name="text" />
+            <input defaultValue={textColor} type="text" name="textColor" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__card">
             <label htmlFor="card">Card colour:</label>
-            <input defaultValue={cardColor} type="text" name="card" />
+            <input defaultValue={cardColor} type="text" name="cardColor" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__birthday">
             <label htmlFor="happy">Happy Birthday colour:</label>
-            <input defaultValue={titleColor} type="text" name="happy" />
+            <input defaultValue={titleColor} type="text" name="titleColor" onChange={handleInputChange} />
           </div>
           <div className="settings__submit">
-            <input className="btn btn-primary" type="submit" />
+            <input className="btn btn-primary" type="submit" onClick={handleFormSubmit} />
           </div>
+            <button onClick={checkState}>Check State</button>
         </div>
         <div
           className="settings__icon"
@@ -292,7 +253,7 @@ function HappyBirthday() {
           {Icons.Settings}
           <span className="settings__pill">{`${
             isOpen ? "Close" : "Open"
-          }`}</span>
+            }`}</span>
         </div>
       </div>
     </section>
