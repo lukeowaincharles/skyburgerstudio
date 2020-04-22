@@ -97,14 +97,9 @@ const HappyBirthday = () => {
     setValues({...form, backgroundColor: color.hex });
   }
 
-  const handleFormSubmit = (e) => {
-    console.log('submitted form');
-    e.preventDefault(); // Prevent page from reloading on submit
-  }
-
-  const checkState = () => {
-    console.log(form);
-  }
+  // const checkState = () => {
+  //   console.log(form);
+  // }
 
   const styles = {
     bgColor: {
@@ -206,10 +201,7 @@ const HappyBirthday = () => {
             <label htmlFor="happy">Happy Birthday colour:</label>
             <input defaultValue={form.titleColor} type="text" name="titleColor" onChange={handleInputChange} />
           </div>
-          <div className="settings__submit">
-            <input className="btn btn-primary" type="submit" onClick={handleFormSubmit} />
-          </div>
-          <button onClick={checkState}>Check State</button>
+          {/* <button onClick={checkState}>Check State</button> */}
         </div>
         <div
           className="settings__icon"
