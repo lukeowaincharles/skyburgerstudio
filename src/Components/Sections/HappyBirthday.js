@@ -154,7 +154,7 @@ const HappyBirthday = () => {
           </div>
           <div className="settings__input settings__message">
             <label htmlFor="message">Message:</label>
-            <input defaultValue={message} type="text" name="message" onChange={handleInputChange} />
+            <input defaultValue={form.message} type="text" name="message" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__sender">
             <label htmlFor="from">From:</label>
@@ -163,7 +163,7 @@ const HappyBirthday = () => {
           <div className="settings__input settings__background">
             <label htmlFor="backgroundColor">Background Colour</label>
             <input
-              defaultValue={backgroundColor}
+              defaultValue={form.backgroundColor}
               type="text"
               name="backgroundColor"
               onChange={handleInputChange}
@@ -171,15 +171,15 @@ const HappyBirthday = () => {
           </div>
           <div className="settings__input settings__text">
             <label htmlFor="text">Card text colour:</label>
-            <input defaultValue={textColor} type="text" name="textColor" onChange={handleInputChange} />
+            <input defaultValue={form.textColor} type="text" name="textColor" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__card">
             <label htmlFor="card">Card colour:</label>
-            <input defaultValue={cardColor} type="text" name="cardColor" onChange={handleInputChange} />
+            <input defaultValue={form.cardColor} type="text" name="cardColor" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__birthday">
             <label htmlFor="happy">Happy Birthday colour:</label>
-            <input defaultValue={titleColor} type="text" name="titleColor" onChange={handleInputChange} />
+            <input defaultValue={form.titleColor} type="text" name="titleColor" onChange={handleInputChange} />
           </div>
         </div>
         <div
