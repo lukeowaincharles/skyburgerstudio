@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import * as Icons from "../Icons";
+import { SketchPicker } from 'react-color';
 
 // Setup some default values
 let name = "'Recipient'",
-message = "Have an amazing birthday!",
-sender = "'Your name'",
-backgroundColor = "black",
-titleColor = "white",
-cardColor = "",
-textColor = "white";
+  message = "Have an amazing birthday!",
+  sender = "'Your name'",
+  backgroundColor = "black",
+  titleColor = "white",
+  cardColor = "",
+  textColor = "white";
 
 // URLSearchParams is not IE compatible, there is a polyfill
 const PARAMS = new URLSearchParams(window.location.search);
@@ -37,6 +38,7 @@ const HappyBirthday = () => {
     [fadeDelay, setFadeDelay] = useState(false),
     [balloonShow, setBalloonShow] = useState(false),
     [isOpen, setOpen] = useState(true),
+    [showBackgroundPicker, setShowBackgroundPicker] = useState(false),
     [form, setValues] = useState(default_settings);
 
   const handleFadeIn = () => {
@@ -62,10 +64,10 @@ const HappyBirthday = () => {
   }
 
   const updateParams = () => {
-    Object.keys(form).forEach( (i) => {
+    Object.keys(form).forEach((i) => {
       PARAMS.set(i, form[i]);
       window.history.replaceState(
-        { i:  form[i]},
+        { i: form[i] },
         "",
         `?${PARAMS.toString()}`
       );
@@ -131,6 +133,15 @@ const HappyBirthday = () => {
       ...form,
       [e.target.name]: e.target.value
     });
+  }
+
+  const toggleBackgroundPicker = () => {
+    setShowBackgroundPicker(showBackgroundPicker => !showBackgroundPicker);
+    console.log(showBackgroundPicker);
+  }
+
+  const handlebackgroundColorPicker = (color) => {
+    setValues({...form, backgroundColor: color.hex });
   }
 
   const handleFormSubmit = (e) => {
@@ -225,11 +236,18 @@ const HappyBirthday = () => {
           <div className="settings__input settings__background">
             <label htmlFor="backgroundColor">Background Colour</label>
             <input
-              defaultValue={form.backgroundColor}
+              value={form.backgroundColor}
               type="text"
               name="backgroundColor"
               onChange={handleInputChange}
             />
+            <button onClick={ toggleBackgroundPicker }>Choose Background Colour</button>
+            {showBackgroundPicker ?
+            <SketchPicker
+              color={ form.backgroundColor }
+              onChange={ handlebackgroundColorPicker }
+            />
+            : null }
           </div>
           <div className="settings__input settings__text">
             <label htmlFor="text">Card text colour:</label>
@@ -246,7 +264,7 @@ const HappyBirthday = () => {
           <div className="settings__submit">
             <input className="btn btn-primary" type="submit" onClick={handleFormSubmit} />
           </div>
-            <button onClick={checkState}>Check State</button>
+          <button onClick={checkState}>Check State</button>
         </div>
         <div
           className="settings__icon"
