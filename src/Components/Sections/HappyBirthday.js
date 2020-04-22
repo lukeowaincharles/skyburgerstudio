@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import * as Icons from "../Icons";
 
-let defaultValues = {
-  name: "'Recipient'",
-  message: "Have an amazing birthday!",
-  sender: "'Your name'",
-  backgroundColor: "black",
-  titleColor: "white",
-  cardColor: "",
-  textColor: "white"
-}
+// Setup some default values
+let name = "'Recipient'",
+message = "Have an amazing birthday!",
+sender = "'Your name'",
+backgroundColor = "black",
+titleColor = "white",
+cardColor = "",
+textColor = "white";
 
 // URLSearchParams is not IE compatible, there is a polyfill
 const PARAMS = new URLSearchParams(window.location.search);
