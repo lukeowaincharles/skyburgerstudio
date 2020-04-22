@@ -39,6 +39,9 @@ const HappyBirthday = () => {
     [balloonShow, setBalloonShow] = useState(false),
     [isOpen, setOpen] = useState(true),
     [showBackgroundPicker, setShowBackgroundPicker] = useState(false),
+    [showCardTextPicker, setShowCardTextPicker] = useState(false),
+    [showCardBackgroundPicker, setShowCardBackgroundPicker] = useState(false),
+    [showTitleTextPicker, setShowTitleTextPicker] = useState(false),
     [form, setValues] = useState(default_settings);
 
   const handleFadeIn = () => {
@@ -90,11 +93,34 @@ const HappyBirthday = () => {
 
   const toggleBackgroundPicker = () => {
     setShowBackgroundPicker(showBackgroundPicker => !showBackgroundPicker);
-    console.log(showBackgroundPicker);
+  }
+
+  const toggleCardTextPicker = () => {
+    setShowCardTextPicker(showCardTextPicker => !showCardTextPicker);
+  }
+
+  const toggleCardBackgroundPicker = () => {
+    setShowCardBackgroundPicker(showCardBackgroundPicker => !showCardBackgroundPicker);
+  }
+
+  const toggleShowTitleTextPicker = () => {
+    setShowTitleTextPicker(showShowTitleTextPicker => !showShowTitleTextPicker);
   }
 
   const handlebackgroundColorPicker = (color) => {
     setValues({...form, backgroundColor: color.hex });
+  }
+
+  const handleCardTextColorPicker = (color) => {
+    setValues({...form, textColor: color.hex });
+  }
+
+  const handleCardBackgroundColorPicker = (color) => {
+    setValues({...form, cardColor: color.hex });
+  }
+
+  const handleTitleTextColorPicker = (color) => {
+    setValues({...form, titleColor: color.hex });
   }
 
   // const checkState = () => {
@@ -161,7 +187,7 @@ const HappyBirthday = () => {
       <div className={`${"settings"} ${fadeDelay ? "isDelayed" : "noShowAmigo"}`}>
         <div className={`${"settings__box"} ${isOpen ? "isOpen" : "isClosed"}`}>
           <div className="settings__input settings__name">
-            <label htmlFor="name">To:</label>
+            <label htmlFor="Name">To:</label>
             <input
               id="Name"
               placeholder="Name"
@@ -173,11 +199,11 @@ const HappyBirthday = () => {
           </div>
           <div className="settings__input settings__message">
             <label htmlFor="message">Message:</label>
-            <input defaultValue={form.message} type="text" name="message" onChange={handleInputChange} />
+            <input id="message" defaultValue={form.message} type="text" name="message" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__sender">
             <label htmlFor="from">From:</label>
-            <input placeholder="Your name/s" type="text" name="sender" onChange={handleInputChange} />
+            <input id="from" placeholder="Your name/s" type="text" name="sender" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__background">
             <label htmlFor="backgroundColor">Background Colour</label>
@@ -191,15 +217,33 @@ const HappyBirthday = () => {
           </div>
           <div className="settings__input settings__text">
             <label htmlFor="text">Card text colour:</label>
-            <input defaultValue={form.textColor} type="text" name="textColor" onChange={handleInputChange} />
+            <button className="btn btn-secondary" onClick={ toggleCardTextPicker }>{showCardTextPicker ? "Close" : "Choose card text colour"}</button>
+            {showCardTextPicker ?
+            <SketchPicker
+              color={ form.textColor }
+              onChange={ handleCardTextColorPicker }
+            />
+            : null }
           </div>
           <div className="settings__input settings__card">
             <label htmlFor="card">Card colour:</label>
-            <input defaultValue={form.cardColor} type="text" name="cardColor" onChange={handleInputChange} />
+            <button className="btn btn-secondary" onClick={ toggleCardBackgroundPicker }>{showCardBackgroundPicker ? "Close" : "Choose card colour"}</button>
+            {showCardBackgroundPicker ?
+            <SketchPicker
+              color={ form.cardColor }
+              onChange={ handleCardBackgroundColorPicker }
+            />
+            : null }
           </div>
           <div className="settings__input settings__birthday">
             <label htmlFor="happy">Happy Birthday colour:</label>
-            <input defaultValue={form.titleColor} type="text" name="titleColor" onChange={handleInputChange} />
+            <button className="btn btn-secondary" onClick={ toggleShowTitleTextPicker }>{showTitleTextPicker ? "Close" : "Choose happy birthday colour"}</button>
+            {showTitleTextPicker ?
+            <SketchPicker
+              color={ form.titleColor }
+              onChange={ handleTitleTextColorPicker }
+            />
+            : null }
           </div>
           {/* <button onClick={checkState}>Check State</button> */}
         </div>
