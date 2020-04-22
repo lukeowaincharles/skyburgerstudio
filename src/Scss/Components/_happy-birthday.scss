@@ -188,9 +188,22 @@
     }
 
     &__input {
+
+      .sketch-picker {
+        margin-bottom: 15px;
+      }
+
+      label {
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+
+      .btn {
+        margin-bottom: 5px;
+      }
+
       input {
         border: none;
-        margin-left: 5px;
         margin-bottom: 5px;
         padding: 5px;
       }
