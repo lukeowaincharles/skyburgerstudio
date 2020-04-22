@@ -169,8 +169,6 @@ const HappyBirthday = () => {
             <label htmlFor="name">To:</label>
             <input
               id="Name"
-              // onChange={updateParams}
-              // onInput={updatePath}
               placeholder="Name"
               type="text"
               name="name"
@@ -188,13 +186,7 @@ const HappyBirthday = () => {
           </div>
           <div className="settings__input settings__background">
             <label htmlFor="backgroundColor">Background Colour</label>
-            <input
-              value={form.backgroundColor}
-              type="text"
-              name="backgroundColor"
-              onChange={handleInputChange}
-            />
-            <button onClick={ toggleBackgroundPicker }>Choose Background Colour</button>
+            <button className="btn btn-secondary" onClick={ toggleBackgroundPicker }>{showBackgroundPicker ? "Close" : "Choose background colour"}</button>
             {showBackgroundPicker ?
             <SketchPicker
               color={ form.backgroundColor }
