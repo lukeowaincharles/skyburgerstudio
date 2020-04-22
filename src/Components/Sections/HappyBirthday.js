@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
 import * as Icons from "../Icons";
 
-// Setup some default values
-let name = "'Recipient'",
-message = "Have an amazing birthday!",
-sender = "'Your name'",
-backgroundColor = "black",
-titleColor = "white",
-cardColor = "",
-textColor = "white";
+let defaultValues = {
+  name: "'Recipient'",
+  message: "Have an amazing birthday!",
+  sender: "'Your name'",
+  backgroundColor: "black",
+  titleColor: "white",
+  cardColor: "",
+  textColor: "white"
+}
+
+// URLSearchParams is not IE compatible, there is a polyfill
+const PARAMS = new URLSearchParams(window.location.search);
+
+// initialise/set the params we want to control
+if (PARAMS.has("name")) { name = PARAMS.get("name"); }
+if (PARAMS.has("sender")) { sender = PARAMS.get("sender"); }
+if (PARAMS.has("message")) { message = PARAMS.get("message"); }
+if (PARAMS.has("backgroundColor")) { backgroundColor = PARAMS.get("backgroundColor"); }
+if (PARAMS.has("cardColor")) { cardColor = PARAMS.get("cardColor"); }
+if (PARAMS.has("titleColor")) { titleColor = PARAMS.get("titleColor"); }
+if (PARAMS.has("textColor")) { textColor = PARAMS.get("textColor"); }
 
 const default_settings = {
   name,
@@ -19,14 +32,6 @@ const default_settings = {
   titleColor,
   textColor,
 };
-
-// URLSearchParams is not IE compatible, there is a polyfill
-const PARAMS = new URLSearchParams(window.location.search);
-Object.keys(default_settings).forEach( (i) => {
-  if (PARAMS.has(i)) {
-    i = PARAMS.get(i);
-  }
-});
 
 const HappyBirthday = () => {
   const [fadeIn, setFadeIn] = useState(false),
@@ -212,7 +217,7 @@ const HappyBirthday = () => {
           </div>
           <div className="settings__input settings__message">
             <label htmlFor="message">Message:</label>
-            <input defaultValue={message} type="text" name="message" onChange={handleInputChange} />
+            <input defaultValue={form.message} type="text" name="message" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__sender">
             <label htmlFor="from">From:</label>
@@ -221,7 +226,7 @@ const HappyBirthday = () => {
           <div className="settings__input settings__background">
             <label htmlFor="backgroundColor">Background Colour</label>
             <input
-              defaultValue={backgroundColor}
+              defaultValue={form.backgroundColor}
               type="text"
               name="backgroundColor"
               onChange={handleInputChange}
@@ -229,15 +234,15 @@ const HappyBirthday = () => {
           </div>
           <div className="settings__input settings__text">
             <label htmlFor="text">Card text colour:</label>
-            <input defaultValue={textColor} type="text" name="textColor" onChange={handleInputChange} />
+            <input defaultValue={form.textColor} type="text" name="textColor" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__card">
             <label htmlFor="card">Card colour:</label>
-            <input defaultValue={cardColor} type="text" name="cardColor" onChange={handleInputChange} />
+            <input defaultValue={form.cardColor} type="text" name="cardColor" onChange={handleInputChange} />
           </div>
           <div className="settings__input settings__birthday">
             <label htmlFor="happy">Happy Birthday colour:</label>
-            <input defaultValue={titleColor} type="text" name="titleColor" onChange={handleInputChange} />
+            <input defaultValue={form.titleColor} type="text" name="titleColor" onChange={handleInputChange} />
           </div>
           <div className="settings__submit">
             <input className="btn btn-primary" type="submit" onClick={handleFormSubmit} />
