@@ -75,67 +75,11 @@ const HappyBirthday = () => {
     updateParams();
   });
 
-  // function handleFormPath(path) {
-  //   setValues({ ...form });
-  //   path = path + "?" + PARAMS.toString();
-  //   // return <Redirect to={path} push />;
-  // }
-
-  // function updateParams(e, data) {
-  //   if (data.name === "name") {
-  //     setValues({
-  //       ...form,
-  //       name: data.value,
-  //     });
-
-  //   }
-  //   // console.log(form.name)
-  //   // console.log(data)
-  //   console.log(name);
-  //   return {
-  //     name: form.name,
-  //   };
-
-  // }
-
-  // const DATA = {
-  //   Name: form.name
-  // }
-
-  // function objectToParams(data) {
-  //   return Object.keys(data)
-  //     .map((key) => `${key}=${encodeURIComponent(data[key])}`)
-  //     .join("&");
-  // }
-
-  // function updatePath() {
-  //   let path = "";
-  //   // path = path + "?" + PARAMS.toString();
-  //   setValues({ ...form });
-  //   window.location.href = path;
-
-  //   let params_obj = {
-  //     name: DATA.Name,
-  //   };
-  //   return path + "?" + objectToParams(params_obj);
-  // }
-
-  // console.log(updatePath)
-
   const handleInputChange = (e) => {
     setValues({
       ...form,
       [e.target.name]: e.target.value
     });
-  }
-
-  const handleFormSubmit = (e) => {
-    console.log('submitted form');
-    e.preventDefault(); // Prevent page from reloading on submit
-  }
-
-  const checkState = () => {
-    console.log(form);
   }
 
   const styles = {
@@ -201,8 +145,6 @@ const HappyBirthday = () => {
             <label htmlFor="name">To:</label>
             <input
               id="Name"
-              // onChange={updateParams}
-              // onInput={updatePath}
               placeholder="Name"
               type="text"
               name="name"
@@ -239,10 +181,6 @@ const HappyBirthday = () => {
             <label htmlFor="happy">Happy Birthday colour:</label>
             <input defaultValue={titleColor} type="text" name="titleColor" onChange={handleInputChange} />
           </div>
-          <div className="settings__submit">
-            <input className="btn btn-primary" type="submit" onClick={handleFormSubmit} />
-          </div>
-            <button onClick={checkState}>Check State</button>
         </div>
         <div
           className="settings__icon"
