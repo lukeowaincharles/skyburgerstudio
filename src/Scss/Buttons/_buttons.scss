@@ -22,4 +22,28 @@
       box-shadow: none;
     }
   }
+
+  &-secondary {
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 0;
+    transition: 300ms ease-in-out background-color, 300ms ease-in-out color, 400ms ease-in-out transform, 200ms ease-in-out opacity;
+
+    &:hover,
+    &:active {
+      border: 2px solid white;
+      background-color: white;
+      color: black;
+    }
+
+    &:focus {
+      border: 2px solid white;
+      background-color: white;
+      color: black;
+      box-shadow: none;
+    }
+  }
 }
