@@ -141,6 +141,7 @@ const HappyBirthday = () => {
       </div>
       <div className={`${"settings"} ${fadeDelay ? "isDelayed" : "noShowAmigo"}`}>
         <div className={`${"settings__box"} ${isOpen ? "isOpen" : "isClosed"}`}>
+          <p>Personalise the card:</p>
           <div className="settings__input settings__name">
             <label htmlFor="name">To:</label>
             <input
