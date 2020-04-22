@@ -179,7 +179,7 @@
     bottom: 0;
     right: 0;
     z-index: 100;
-    padding-right: 15px;
+    width: 100%;
     opacity: 0;
     transition: opacity ease-in-out 2s;
 
@@ -188,14 +188,17 @@
     }
 
     &__input {
-
+      margin-bottom: 10px;
+      width: 100%;
+      
       .sketch-picker {
         margin-bottom: 15px;
       }
-
+      
       label {
         margin-right: 5px;
         margin-bottom: 5px;
+        display: block;
       }
 
       .btn {
@@ -203,6 +206,7 @@
       }
 
       input {
+        width: 100%;
         border: none;
         margin-bottom: 5px;
         padding: 5px;
@@ -285,6 +289,8 @@
 
     .settings {
       top: 75%;
+      padding-right: 15px;
+      width: 25%;
       bottom: unset;
       transform: translateY(-75%);
 
