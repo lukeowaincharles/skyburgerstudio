@@ -198,7 +198,6 @@
       label {
         margin-right: 5px;
         margin-bottom: 5px;
-        display: block;
       }
 
       .btn {
@@ -206,7 +205,6 @@
       }
 
       input {
-        width: 100%;
         border: none;
         margin-bottom: 5px;
         padding: 5px;
@@ -293,6 +291,16 @@
       width: 25%;
       bottom: unset;
       transform: translateY(-75%);
+
+      &__input {
+        label {
+          display: block;
+        }
+
+        input {
+          width: 100%;
+        }
+      }
 
       &__icon {
         text-align: right;
