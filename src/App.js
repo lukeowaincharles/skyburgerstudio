@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
+import About from "./Components/Sections/About";
 // import FindOutMore from "./Components/Sections/FindOutMore";
 // import WhoWeAre from "./Components/Sections/WhoWeAre";
 import HappyBirthday from "./Components/Sections/HappyBirthday";
@@ -18,6 +19,7 @@ function App() {
               <Intro />
               {/* <FindOutMore />
               <WhoWeAre /> */}
+              <About />
             </React.Fragment>
           )}
         />
