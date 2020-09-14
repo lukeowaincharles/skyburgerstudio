@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
+import Footer from "./Components/Footer/Footer";
 import About from "./Components/Sections/About";
 // import FindOutMore from "./Components/Sections/FindOutMore";
 // import WhoWeAre from "./Components/Sections/WhoWeAre";
@@ -20,6 +21,7 @@ function App() {
               {/* <FindOutMore />
               <WhoWeAre /> */}
               <About />
+              <Footer />
             </React.Fragment>
           )}
         />
