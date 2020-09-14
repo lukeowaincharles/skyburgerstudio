@@ -9,7 +9,7 @@ function About() {
       <div className="container">
         <div className="row">
           <div className="col-md-7">
-            <h1>{CONTENT[0].title}</h1>
+            <h2>{CONTENT[0].title}</h2>
             {CONTENT[0].text.map(function (paragraph, i) {
               return <p key={i}>{paragraph}</p>;
             })}
