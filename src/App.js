@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
-import FindOutMore from "./Components/Sections/FindOutMore";
-import WhoWeAre from "./Components/Sections/WhoWeAre";
+// import FindOutMore from "./Components/Sections/FindOutMore";
+// import WhoWeAre from "./Components/Sections/WhoWeAre";
 import HappyBirthday from "./Components/Sections/HappyBirthday";
+import Intro from "./Components/Sections/Intro";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
           path="/"
           render={() => (
             <React.Fragment>
-              <FindOutMore />
-              <WhoWeAre />
+              <Intro />
+              {/* <FindOutMore />
+              <WhoWeAre /> */}
             </React.Fragment>
           )}
         />
