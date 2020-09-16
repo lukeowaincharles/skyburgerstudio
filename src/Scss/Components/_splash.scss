@@ -1,0 +1,85 @@
+.splash {
+  padding-top: 41px;
+  padding-bottom: 138px;
+  position: relative;
+  overflow: hidden;
+
+  &__icons {
+    .icon {
+      position: absolute;
+
+      &--code {
+        bottom: 30px;
+        left: 75%;
+        z-index: $zIndex2;
+      }
+
+      &--heart--pink {
+        bottom: -10px;
+        left: 10px;
+
+        fill: color(pink);
+      }
+
+      &--smiles {
+        top: -30px;
+        left: -35px;
+      }
+
+      &--cursor {
+        top: -50px;
+        right: -50px;
+        z-index: $zIndex2;
+      }
+
+      &--peace {
+        display: none;
+      }
+
+      &--hash {
+        display: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .splash {
+    &__icons {
+      .icon {
+        &--code {
+          bottom: 70px;
+          left: 25%;
+        }
+  
+        &--heart--pink {
+          bottom: -10px;
+          left: 10%;
+        }
+  
+        &--smiles {
+          top: 50px;
+          left: 10%;
+        }
+  
+        &--cursor {
+          top: -30px;
+          right: 20%;
+        }
+  
+        &--peace {
+          top: 5px;
+          right: 12%;
+          z-index: $zIndex3;
+          display: block;
+        }
+  
+        &--hash {
+          bottom: -25px;
+          right: 9%;
+          display: block;
+        }
+      }
+    }
+  }
+}
