@@ -7,6 +7,7 @@ import About from "./Components/Sections/About";
 // import WhoWeAre from "./Components/Sections/WhoWeAre";
 import HappyBirthday from "./Components/Sections/HappyBirthday";
 import Intro from "./Components/Sections/Intro";
+import Splash from "./Components/Sections/Splash";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           path="/"
           render={() => (
             <React.Fragment>
+              <Splash />
               <Intro />
               {/* <FindOutMore />
               <WhoWeAre /> */}
