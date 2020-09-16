@@ -55,6 +55,11 @@ $transitions-types: (
   lazy-load: 0.5s ease-out
 );
 
+// Zindexes
+$zIndex1: 1;
+$zIndex2: 2;
+$zIndex3: 3;
+
 @include base--init();
 
 //  The following entries define default font sizes.
