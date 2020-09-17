@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
 import Footer from "./Components/Footer/Footer";
 import About from "./Components/Sections/About";
+import Experience from "./Components/Sections/Experience";
 // import FindOutMore from "./Components/Sections/FindOutMore";
 // import WhoWeAre from "./Components/Sections/WhoWeAre";
 import HappyBirthday from "./Components/Sections/HappyBirthday";
@@ -20,6 +21,8 @@ function App() {
             <React.Fragment>
               <Splash />
               <Intro />
+
+              <Experience />
               {/* <FindOutMore />
               <WhoWeAre /> */}
               <About />

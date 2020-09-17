@@ -18,6 +18,7 @@ import { ReactComponent as YaIcon } from "../Assets/images/ya.svg";
 import { ReactComponent as SettingsIcon } from "../Assets/images/settings.svg";
 import { ReactComponent as PeaceIcon } from "../Assets/images/peace.svg";
 import { ReactComponent as WeLoveWebsitesIcon } from "../Assets/images/we-love-websites.svg";
+import { ReactComponent as BrowserIcon } from "../Assets/images/browser--black.svg";
 
 export const Close = <CloseIcon className="icon icon--close" />;
 export const Code = <CodeIcon className="icon icon--code" />;
@@ -35,6 +36,12 @@ export const Sad = <SadIcon className="icon icon--sad" />;
 export const Search = <SearchIcon className="icon icon--search" />;
 export const Smiles = <SmilesIcon className="icon icon--smiles" />;
 export const Ya = <YaIcon className="icon icon--ya" />;
-export const Settings = <SettingsIcon className="icon icon--settings" />
+export const Settings = <SettingsIcon className="icon icon--settings" />;
 export const Peace = <PeaceIcon className="icon icon--peace" />;
-export const WeLoveWebsites = <WeLoveWebsitesIcon className="icon icon--love-websites" alt="We Love Websites" />
+export const WeLoveWebsites = (
+  <WeLoveWebsitesIcon
+    className="icon icon--love-websites"
+    alt="We Love Websites"
+  />
+);
+export const Browser = <BrowserIcon className="icon icon--browser" />;
