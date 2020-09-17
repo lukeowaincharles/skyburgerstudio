@@ -2,12 +2,14 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "./App.scss";
 import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
 import About from "./Components/Sections/About";
 import Experience from "./Components/Sections/Experience";
 // import FindOutMore from "./Components/Sections/FindOutMore";
 // import WhoWeAre from "./Components/Sections/WhoWeAre";
 import HappyBirthday from "./Components/Sections/HappyBirthday";
 import Intro from "./Components/Sections/Intro";
+import RecentWork from "./Components/Sections/RecentWork";
 import Splash from "./Components/Sections/Splash";
 
 function App() {
@@ -20,8 +22,9 @@ function App() {
           render={() => (
             <React.Fragment>
               <Splash />
+              <Header />
               <Intro />
-
+              <RecentWork />
               <Experience />
               {/* <FindOutMore />
               <WhoWeAre /> */}

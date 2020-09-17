@@ -1,0 +1,30 @@
+{
+  "content": [
+    {
+      "title": "Recent work"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Kate & The Ink",
+      "text": "E-commerce redesign and build",
+      "link": "https://kateandtheink.com/",
+      "linkText": "Visit website",
+      "image": "/images/kateandtheink.jpg"
+    },
+    {
+      "title": "5th Element Spaces",
+      "text": "Branding, website and build",
+      "link": "",
+      "linkText": "",
+      "image": "/images/fifthelement.jpg"
+    },
+    {
+      "title": "Geoff's Fruit & Veg",
+      "text": "Branding, website design and build",
+      "link": "",
+      "linkText": "",
+      "image": "/images/geoffs.jpg"
+    }
+  ]
+}
