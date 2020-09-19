@@ -8,7 +8,7 @@ function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-md-4">
-            <p className="h3">Skyburger Studio</p>
+            <p className="h3 letter__space">Skyburger Studio</p>
           </div>
           <div className="col-md-8 d-flex justify-content-md-end">
             <p>

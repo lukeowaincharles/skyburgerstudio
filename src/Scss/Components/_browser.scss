@@ -4,6 +4,14 @@
   margin: 0 auto;
   position: relative;
 
+  h1 {
+    text-transform: uppercase;
+  }
+
+  p {
+    @include use-responsive-font('h3');
+  }
+
   &--background {
     border: 6px solid white;
     height: 100%;

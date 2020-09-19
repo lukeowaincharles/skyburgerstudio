@@ -10,7 +10,7 @@ function Experience() {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <div class="browser--icon">
+            <div className="browser--icon">
               {Browser}
               {Browser}
             </div>

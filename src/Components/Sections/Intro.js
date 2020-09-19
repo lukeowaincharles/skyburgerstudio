@@ -15,7 +15,7 @@ function Intro() {
             </h1>
             <p>{CONTENT[0].text}</p>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 d-md-flex justify-content-md-end">
             {WeLoveWebsites}
           </div>
         </div>
