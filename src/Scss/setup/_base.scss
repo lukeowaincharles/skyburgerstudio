@@ -1,11 +1,13 @@
 a {
   color: black;
-  transition: 300ms color ease-in-out;
+  transition: 300ms color ease-in-out, border-bottom 300ms ease-in-out;
+  border-bottom: 4px solid transparent;
 
   &:hover,
   &:active {
-    color: color(green);
+    color: black;
     text-decoration: none;
+    border-bottom: 4px solid color(pink);
   }
 }
 

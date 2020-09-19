@@ -1,0 +1,38 @@
+.about {
+  .column {
+    position: relative;
+  }
+
+  &__images {
+    img {
+      width: 45%;
+      display: inline-block;
+
+      &:first-child {
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .about {
+    &__images {
+      img {
+        position: absolute;
+        width: auto;
+        display: block;
+  
+        &:first-child {
+          left: 50px;
+          bottom: 15%;
+        }
+  
+        &:nth-child(2) {
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
