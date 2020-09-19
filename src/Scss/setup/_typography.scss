@@ -13,12 +13,14 @@ h2,
 .h2 {
   @include use-responsive-font('h2');
   margin-bottom: 24px;
+  font-weight: 900;
 }
 
 h3,
 .h3 {
   @include use-responsive-font('h3');
   margin-bottom: 20px;
+  font-weight: 900;
 }
 
 .copy--large {
