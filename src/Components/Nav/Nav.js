@@ -8,14 +8,17 @@ function Navigation() {
     [isOpen, setOpen] = useState(false),
     NAVCONTENT = NavData.content;
 
-  let delayLink = 0;
-  if (width <= 1200) {
+  let delayLink = 0,
+    menuClass = 'menu-list--item';
+
+  if (width <= 992) {
     delayLink = 800;
+    menuClass = 'hamburger__menu-list--item';
   }
 
   const navItems = NAVCONTENT.map((item, index) => {
     return (
-      <li key={index}>
+      <li className={menuClass} key={index}>
         <Link
           to={item.link}
           href={item.link}
@@ -23,7 +26,7 @@ function Navigation() {
           duration={800}
           delay={delayLink}
           offset={-25}
-          className="menu-list--item menu-link"
+          className="menu-link"
           onClick={() => {
             setOpen(!isOpen);
           }}
@@ -53,14 +56,14 @@ function Navigation() {
           <div className="overlay">
             {isOpen ? (
               <div className="container">
-                <ul>{navItems}</ul>
+                <ul className="hamburger__menu-list">{navItems}</ul>
               </div>
             ) : null}
           </div>
         </div>
       ) : (
         <nav>
-          <ul>{navItems}</ul>
+          <ul className="menu-list">{navItems}</ul>
         </nav>
       )}
     </React.Fragment>
