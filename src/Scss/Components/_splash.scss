@@ -47,32 +47,32 @@
     &__icons {
       .icon {
         &--code {
-          bottom: 70px;
-          left: 25%;
+          bottom: 30px;
+          left: 16%;
         }
-  
+
         &--heart--pink {
           bottom: -10px;
           left: 10%;
         }
-  
+
         &--smiles {
           top: 50px;
           left: 10%;
         }
-  
+
         &--cursor {
           top: -30px;
           right: 20%;
         }
-  
+
         &--peace {
           top: 5px;
           right: 12%;
           z-index: $zIndex3;
           display: block;
         }
-  
+
         &--hash {
           bottom: -25px;
           right: 9%;

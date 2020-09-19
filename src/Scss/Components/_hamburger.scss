@@ -37,7 +37,7 @@
 
         &:hover,
         &:active {
-          text-decoration: underline;
+          text-decoration: none;
         }
       }
     }
@@ -107,12 +107,16 @@
       margin-left: 0;
     }
 
+    &:last-child {
+      display: none;
+    }
+
     a {
       color: white;
 
       &:hover,
       &:active {
-        text-decoration: underline;
+        text-decoration: none;
       }
     }
   }

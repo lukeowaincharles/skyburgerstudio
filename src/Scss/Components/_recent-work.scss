@@ -2,7 +2,6 @@
   .project {
     &__image-wrapper {
       position: relative;
-      width: 288px;
       margin: 0 auto;
 
       &:after {
@@ -59,6 +58,16 @@
             opacity: 0.75;
           }
         }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .recentwork {
+    .project {
+      &__image-wrapper {
+        width: 288px;
       }
     }
   }

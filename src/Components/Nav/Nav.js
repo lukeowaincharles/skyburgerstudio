@@ -40,7 +40,7 @@ function Navigation() {
   return (
     <React.Fragment>
       {width <= 992 ? (
-        <div className={`hamburger__wrapper ${isOpen ? "isOpen" : ""}`}>
+        <div className={`d-none hamburger__wrapper ${isOpen ? "isOpen" : ""}`}>
           <div className="hamburger">
             <div
               className={`hamburger__icon ${isOpen ? "isOpen" : ""}`}
