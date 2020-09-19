@@ -1,8 +1,11 @@
 {
-  "content" : [
+  "content": [
     {
       "title": "Looks aren’t everything but it sure does help.",
-      "text": "We take pride in every single website we create and we only launch websites and brands we are proud of. We work with people who are willing to invest in themselves and their buisnesses through well designed and built websites. We have over 10 years London agency experience meaning you get top quality work without the agency prices."
+      "text": [
+        "We take pride in every single logo and website we create and we only launch websites and brands we are proud of. We work with people who are willing to invest in themselves and their buisnesses through well designed and built websites.",
+        "We have over 7 years London agency experience meaning you get top quality work without the agency prices."
+      ]
     }
   ]
 }

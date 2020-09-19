@@ -6,10 +6,6 @@
       &:nth-child(1) {
         margin-bottom: 25px;
       }
-
-      &:nth-child(2) {
-        display: none;
-      }
     }
   }
 }
@@ -21,18 +17,7 @@
   
       .icon {
         &:nth-child(1) {
-          position: relative;
-          top: 60px;
-          left: 0;
-          z-index: $zIndex1;
-          width: auto;
-        }
-  
-        &:nth-child(2) {
-          position: absolute;
-          top: 0;
-          right: 0;
-          display: block;
+          margin-bottom: 0;
         }
       }
     }

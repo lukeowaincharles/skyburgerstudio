@@ -1,6 +1,6 @@
 import React from "react";
 import ExperienceData from "../../Data/ExperienceData.json";
-import { Browser } from "../Icons";
+import { BrowserColour } from "../Icons";
 
 function Experience() {
   const CONTENT = ExperienceData.content;
@@ -11,13 +11,14 @@ function Experience() {
         <div className="row">
           <div className="col-md-6">
             <div className="browser--icon">
-              {Browser}
-              {Browser}
+              {BrowserColour}
             </div>
           </div>
-          <div className="col-md-5 offset-md-1">
+          <div className="col-md-6">
             <h2>{CONTENT[0].title}</h2>
-            <p>{CONTENT[0].text}</p>
+            {CONTENT[0].text.map(function (paragraph, i) {
+              return <p key={i}>{paragraph}</p>;
+            })}
           </div>
         </div>
       </div>
