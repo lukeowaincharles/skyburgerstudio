@@ -11,6 +11,7 @@ import HappyBirthday from "./Components/Sections/HappyBirthday";
 import Intro from "./Components/Sections/Intro";
 import RecentWork from "./Components/Sections/RecentWork";
 import Splash from "./Components/Sections/Splash";
+import Testimonials from "./Components/Sections/Testimonials";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Intro />
               <RecentWork />
               <Experience />
+              <Testimonials />
               {/* <FindOutMore />
               <WhoWeAre /> */}
               <About />

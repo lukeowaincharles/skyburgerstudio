@@ -20,6 +20,7 @@ import { ReactComponent as PeaceIcon } from "../Assets/images/peace.svg";
 import { ReactComponent as WeLoveWebsitesIcon } from "../Assets/images/we-love-websites.svg";
 import { ReactComponent as BrowserIcon } from "../Assets/images/browser--black.svg";
 import { ReactComponent as BrowserColourIcon } from "../Assets/images/browser--colour.svg";
+import { ReactComponent as QuotesIcon } from "../Assets/images/quotes.svg";
 
 export const Close = <CloseIcon className="icon icon--close" />;
 export const Code = <CodeIcon className="icon icon--code" />;
@@ -47,3 +48,4 @@ export const WeLoveWebsites = (
 );
 export const Browser = <BrowserIcon className="icon icon--browser" />;
 export const BrowserColour = <BrowserColourIcon className="icon icon--browser--colour" />
+export const Quotes = <QuotesIcon className="icon icon--quotes" />;
