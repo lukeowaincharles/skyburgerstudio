@@ -28,7 +28,10 @@ $font--chivo: 'Chivo', sans-serif;
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: $font--chivo;
 }
 
@@ -59,6 +62,9 @@ $transitions-types: (
 $zIndex1: 1;
 $zIndex2: 2;
 $zIndex3: 3;
+$z5: 5;
+$z10: 10;
+$z20: 20;
 
 @include base--init();
 
