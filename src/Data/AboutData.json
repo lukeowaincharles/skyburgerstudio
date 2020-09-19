@@ -1,0 +1,27 @@
+{
+  "content": [
+    {
+      "title": "His name isn’t really Skywalker.<br /> Her name really is Hamburger.",
+      "text": [
+        "Together they run Skyburger Studio.",
+        "<span class='mt-4 d-block font-weight-bold'>Our ethos</span>",
+        "Everyone should have access to professional design work, whatever their budget. We understand the struggles of a new business, there’s a lot to do, especially when making a great online impression.",
+        "We only work with companies we believe in, as we know that great work comes out of having a shared passion. We care about your business, your goals and we want to help you get there."
+      ]
+    }
+  ],
+  "links": [
+    {
+      "text": "Find out more about Liz",
+      "link": "https://elizabethhamburger.com/",
+      "image": "/images/liz.png",
+      "alt": "Liz portrait"
+    },
+    {
+      "text": "Find out more about Luke",
+      "link": "https://www.lukeowaincharles.co.uk/",
+      "image": "/images/luke.png",
+      "alt": "Luke portrait"
+    }
+  ]
+}

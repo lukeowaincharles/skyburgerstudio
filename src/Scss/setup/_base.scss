@@ -1,11 +1,13 @@
 a {
   color: black;
-  transition: 300ms color ease-in-out;
+  transition: 300ms color ease-in-out, border-bottom 300ms ease-in-out;
+  border-bottom: 4px solid transparent;
 
   &:hover,
   &:active {
-    color: color(green);
+    color: black;
     text-decoration: none;
+    border-bottom: 4px solid color(pink);
   }
 }
 
@@ -13,11 +15,17 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: $font--chivo;
+  letter-spacing: .04em;
 }
 
 img {
   height: auto;
   max-width: 100%;
+}
+
+section {
+  padding: 60px 0;
 }
 
 .underline {
@@ -33,5 +41,10 @@ img {
   &--black {
     background-color: black;
     color: white;
+  }
+
+  &--white {
+    background-color: white;
+    color: black;
   }
 }

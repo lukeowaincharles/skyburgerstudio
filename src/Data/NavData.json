@@ -1,0 +1,20 @@
+{
+  "content": [
+    {
+      "title": "Recent work",
+      "link": "#recentWork"
+    },
+    {
+      "title": "Testimonials",
+      "link": "#testimonials"
+    },
+    {
+      "title": "About us",
+      "link": "#about"
+    },
+    {
+      "title": "Contact",
+      "link": "#contact"
+    }
+  ]
+}

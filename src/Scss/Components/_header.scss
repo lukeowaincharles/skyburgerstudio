@@ -1,0 +1,29 @@
+.header-wrapper {
+  // position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: $z20;
+  transition: padding ease-in-out 300ms;
+
+  // &.header-scroll {
+  //   padding: 14px 0;
+
+  //   .header-logo {
+  //     width: 140px;
+  //   }  
+  // }
+}
+
+.header-logo {
+  width: 161px;
+  transition: width ease-in-out 300ms;
+
+  p {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.letter__space {
+  letter-spacing: .9px;
+}
