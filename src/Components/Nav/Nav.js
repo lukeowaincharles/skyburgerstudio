@@ -22,7 +22,7 @@ function Navigation() {
           smooth={true}
           duration={800}
           delay={delayLink}
-          offset={-50}
+          offset={-25}
           className="menu-list--item menu-link"
           onClick={() => {
             setOpen(!isOpen);

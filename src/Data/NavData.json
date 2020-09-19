@@ -2,19 +2,19 @@
   "content": [
     {
       "title": "Recent work",
-      "link": ""
+      "link": "#recentWork"
     },
     {
       "title": "Testimonials",
-      "link": ""
+      "link": "#testimonials"
     },
     {
       "title": "About us",
-      "link": ""
+      "link": "#about"
     },
     {
       "title": "Contact",
-      "link": ""
+      "link": "#contact"
     }
   ]
 }

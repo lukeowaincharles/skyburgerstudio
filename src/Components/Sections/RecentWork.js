@@ -23,7 +23,7 @@ function RecentWork() {
   });
 
   return (
-    <section className="recentwork background--black text-center">
+    <section className="recentwork background--black text-center" id="recentWork" name="#recentWork">
       <div className="container">
         <h2>{CONTENT[0].title}</h2>
         <div className="row">{projects}</div>

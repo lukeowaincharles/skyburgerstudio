@@ -5,7 +5,7 @@ function About() {
   const CONTENT = AboutData.content;
 
   return (
-    <section className="intro background--white">
+    <section className="intro background--white" id="about" name="#about">
       <div className="container">
         <div className="row">
           <div className="col-md-7">
