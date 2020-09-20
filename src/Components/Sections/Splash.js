@@ -4,10 +4,7 @@ import * as Icons from "../Icons";
 function Splash() {
 
   return (
-    <section
-      className="splash background--black"
-      id="splashPage"
-    >
+    <section className="splash background--black" id="splashPage">
       <div className="container">
         <div className="browser">
           <div className="browser__bar">
@@ -33,9 +30,9 @@ function Splash() {
 
           {Icons.Smiles}
           {Icons.Peace}
-          
+
           {Icons.Cursor}
-          
+
           {Icons.Hash}
         </div>
       </div>
