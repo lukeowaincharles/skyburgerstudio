@@ -6,8 +6,15 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll >= 20) {
+      const header = document.getElementById("headerRef"),
+        headerPos = header.getBoundingClientRect(),
+        splash = document.getElementById("splashPage"),
+        splashPos = splash.getBoundingClientRect();
+
+      let splashY = splashPos.bottom,
+        headerY = headerPos.top;
+
+      if (headerY <= 0 && splashY <= 0) {
         setFixed(true);
       } else {
         setFixed(false);
@@ -19,7 +26,12 @@ function Header() {
   }, [isFixed]);
 
   return (
-    <div className={`header-wrapper background--black ${isFixed ? "header-scroll" : ""}`}>
+    <div
+      id="headerRef"
+      className={`header-wrapper background--black ${
+        isFixed ? "header-scroll" : ""
+      }`}
+    >
       <div className="container">
         <div className="row">
           <div className="col-6 col-md-4">
