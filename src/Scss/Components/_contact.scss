@@ -1,0 +1,110 @@
+.contact {
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    max-width: 479px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .icon {
+    position: absolute;
+
+    &--heart {
+      top: -5%;
+      left: -15%;
+    }
+
+    &--plus {
+      top: -8%;
+      right: -12%;
+    }
+
+    &--code {
+      opacity: 0;
+    }
+
+    &--exclaim {
+      opacity: 0;
+    }
+
+    &--ok {
+      bottom: -8%;
+      right: -3%;
+    }
+
+    &--pencil {
+      bottom: -3%;
+      left: 2%;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(md) {
+  .contact {
+    .icon {
+      &--heart {
+        top: -3%;
+        left: 5%;
+      }
+  
+      &--plus {
+        top: auto;
+        bottom: 20%;
+        right: auto;
+        left: -2%;
+      }
+  
+      &--code {
+        opacity: 1;
+        bottom: 12%;
+        left: -1%;
+      }
+  
+      &--exclaim {
+        opacity: 1;
+        top: 9%;
+        right: -3%;
+      }
+  
+      &--ok {
+        top: 13%;
+        bottom: auto;
+        right: -1%;
+      }
+  
+      &--pencil {
+        bottom: 3%;
+        right: 1%;
+        left: auto;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .contact {
+    .icon {
+      &--code {
+        opacity: 1;
+        bottom: 12.5%;
+        left: 6%;
+      }
+  
+      &--ok {
+        top: 18%;
+        bottom: auto;
+        right: 4%;
+      }
+  
+      &--pencil {
+        bottom: 5%;
+        right: 6%;
+        left: auto;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,86 @@
+.form__wrapper,
+#mc_embed_signup {
+  max-width: 443px;
+  margin: 0 auto;
+
+  .subscribe {
+    padding: 10px 20px;
+    width: auto;
+    transition: 300ms ease-in-out background-color;
+    background-color: black;
+    border: 4px solid white;
+    margin: 0;
+    height: auto;
+    line-height: initial;
+    border-radius: 0;
+    font-size: 16px;
+
+    &:hover,
+    &:active {
+      background-color: color(pink);
+    }
+  }
+
+  .asterisk {
+    color: color(red);
+  }
+
+  .indicates-required {
+    margin-right: 0;
+  }
+
+  form {
+    text-align: left;
+
+    &#mc-embedded-subscribe-form {
+      input.mce_inline_error {
+        border: 5px solid color(red);
+      }
+
+      div.mce_inline_error {
+        color: color(red);
+        background-color: transparent;
+        padding: 0;
+      }
+    }
+
+    .mc-field-group {
+      width: 100%;
+      margin-bottom: 24px;
+      padding-bottom: 0;
+
+      .gdprRequired {
+        margin-bottom: 0;
+      }
+
+      label {
+        display: block;
+        font-size: 16px;
+        font-weight: 900;
+        letter-spacing: 0.9px;
+      }
+
+      input {
+        width: 100%;
+        background-color: black;
+        border: 5px solid white;
+        color: white;
+        border-radius: 1px;
+        margin-bottom: 8px;
+
+        &:focus {
+          border: 5px solid color(pink);
+          outline: 0;
+        }
+      }
+
+      .content__gdpr {
+        input {
+          display: inline-block;
+          width: auto;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

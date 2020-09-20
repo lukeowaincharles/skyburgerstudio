@@ -4,6 +4,7 @@ import "./App.scss";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import About from "./Components/Sections/About";
+import Contact from "./Components/Sections/Contact";
 import Experience from "./Components/Sections/Experience";
 // import FindOutMore from "./Components/Sections/FindOutMore";
 // import WhoWeAre from "./Components/Sections/WhoWeAre";
@@ -40,6 +41,7 @@ function App() {
               <IntersectionObserver>
                 <About />
               </IntersectionObserver>
+              <Contact />
               <Footer />
             </React.Fragment>
           )}

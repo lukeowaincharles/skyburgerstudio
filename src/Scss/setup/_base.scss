@@ -38,6 +38,17 @@ section {
   }
 }
 
+.email {
+  &--white {
+    color: white;
+
+    &:hover,
+    &:active {
+      color: white;
+    }
+  }
+}
+
 .background {
   &--black {
     background-color: black;
