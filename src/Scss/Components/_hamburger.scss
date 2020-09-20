@@ -84,6 +84,16 @@
             transform: translateX(-1px) translateY(3px) rotate(-45deg);
           }
         }
+
+        &--inner {
+          top: 44px;
+        }
+
+        &--outer {
+          span {
+            opacity: 0;
+          }
+        }
       }
 
       .overlay {

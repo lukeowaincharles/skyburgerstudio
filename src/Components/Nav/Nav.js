@@ -9,11 +9,11 @@ function Navigation() {
     NAVCONTENT = NavData.content;
 
   let delayLink = 0,
-    menuClass = 'menu-list--item';
+    menuClass = "menu-list--item";
 
   if (width <= 992) {
     delayLink = 800;
-    menuClass = 'hamburger__menu-list--item';
+    menuClass = "hamburger__menu-list--item";
   }
 
   const navItems = NAVCONTENT.map((item, index) => {
@@ -25,7 +25,7 @@ function Navigation() {
           smooth={true}
           duration={800}
           delay={delayLink}
-          offset={-25}
+          offset={-105}
           className="menu-link"
           onClick={() => {
             setOpen(!isOpen);
@@ -40,10 +40,10 @@ function Navigation() {
   return (
     <React.Fragment>
       {width <= 992 ? (
-        <div className={`d-none hamburger__wrapper ${isOpen ? "isOpen" : ""}`}>
+        <div className={`hamburger__wrapper ${isOpen ? "isOpen" : ""}`}>
           <div className="hamburger">
             <div
-              className={`hamburger__icon ${isOpen ? "isOpen" : ""}`}
+              className={`hamburger__icon hamburger__icon--outer ${isOpen ? "isOpen" : ""}`}
               onClick={() => {
                 setOpen(!isOpen);
               }}
@@ -56,6 +56,16 @@ function Navigation() {
           <div className="overlay">
             {isOpen ? (
               <div className="container">
+                <div
+                  className={`hamburger__icon hamburger__icon--inner isOpen ${isOpen ? "isOpen" : ""}`}
+                  onClick={() => {
+                    setOpen(!isOpen);
+                  }}
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
                 <ul className="hamburger__menu-list">{navItems}</ul>
               </div>
             ) : null}
