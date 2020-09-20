@@ -12,6 +12,7 @@ import Intro from "./Components/Sections/Intro";
 import RecentWork from "./Components/Sections/RecentWork";
 import Splash from "./Components/Sections/Splash";
 import Testimonials from "./Components/Sections/Testimonials";
+import { IntersectionObserver } from "./Components/Utilities/IntersectionObserver";
 
 function App() {
   return (
@@ -24,13 +25,21 @@ function App() {
             <React.Fragment>
               <Splash />
               <Header />
-              <Intro />
-              <RecentWork />
-              <Experience />
+              <IntersectionObserver>
+                <Intro />
+              </IntersectionObserver>
+              <IntersectionObserver>
+                <RecentWork />
+              </IntersectionObserver>
+              <IntersectionObserver>
+                <Experience />
+              </IntersectionObserver>
               <Testimonials />
               {/* <FindOutMore />
               <WhoWeAre /> */}
-              <About />
+              <IntersectionObserver>
+                <About />
+              </IntersectionObserver>
               <Footer />
             </React.Fragment>
           )}
