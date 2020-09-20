@@ -2,7 +2,24 @@
   display: none;
 }
 
+.icon {
+  &--love-websites {
+    width: 100%;
+  }
+
+  &--browser--colour {
+    width: 100%;
+  }
+}
+
 @include viewport-up(md) {
+
+  .icon {
+    &--love-websites {
+      width: auto;
+    }
+  }
+
   .icons {
     display: block;
     &__wrapper {
