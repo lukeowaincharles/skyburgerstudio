@@ -5,8 +5,6 @@ import ContactData from "../../Data/ContactData.json";
 function Contact() {
   const CONTENT = ContactData.content;
 
-
-
   const styles = {
     display: {
       display: "none",
@@ -78,6 +76,21 @@ function Contact() {
                 <div className="content__gdpr">
                   <label>Marketing Permissions</label>
                   <p>
+                    By sending us a message using this form, you'll be signing
+                    up to our mailing list. But don't worry, we won't spam you
+                    with emails we'll update you once in a while. If you'd
+                    rather not sign up to this mailing then send us an email
+                    instead{" "}
+                    <a
+                      href="mailto:hello@skyburgerstudio.co.uk"
+                      className="email email--white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      hello@skyburgerstudio.co.uk
+                    </a>
+                  </p>
+                  <p>
                     Please confirm you are happy to receive emails from
                     Skyburger Studio:
                   </p>
@@ -98,8 +111,7 @@ function Contact() {
                   </fieldset>
                   <p className="small">
                     You can unsubscribe at any time by clicking the link in the
-                    footer of our emails. For information about our privacy
-                    practices, please visit our website.
+                    footer of our emails.
                   </p>
                 </div>
                 <div className="content__gdprLegal">
@@ -107,7 +119,12 @@ function Contact() {
                     We use Mailchimp as our marketing platform. By clicking
                     below to subscribe, you acknowledge that your information
                     will be transferred to Mailchimp for processing.{" "}
-                    <a href="https://mailchimp.com/legal/" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://mailchimp.com/legal/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="email email--white"
+                    >
                       Learn more about Mailchimp's privacy practices here.
                     </a>
                   </p>
@@ -126,10 +143,7 @@ function Contact() {
                 ></div>
               </div>
               {/* <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> */}
-              <div
-                style={styles.position}
-                aria-hidden="true"
-              >
+              <div style={styles.position} aria-hidden="true">
                 <input
                   type="text"
                   name="b_280fcafeadb0bc02f7d812bfc_a3337076c3"
