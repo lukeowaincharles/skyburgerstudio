@@ -2,8 +2,12 @@
   border: 6px solid white;
   max-width: 520px;
   margin: 0 auto;
-  position: relative;
   z-index: $zIndex1;
+  position: relative;
+  
+  &__wrapper {
+    position: relative;
+  }
 
   h1 {
     text-transform: uppercase;
@@ -17,10 +21,19 @@
     border: 6px solid white;
     height: 100%;
     width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
     position: absolute;
     top: 25px;
-    left: 25px;
+    left: 50%;
+    transform: translateX(-45%);
     display: none;
+    background-color: black;
+    z-index: 0;
+
+    .browser__bar {
+      z-index: 0;
+    }
   }
 
   &__bar {
