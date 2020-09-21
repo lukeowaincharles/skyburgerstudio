@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Icons from "../Icons";
 
 function Splash() {
+  const [isClosed, setClosed] = useState(false);
+
+  const handleClose = () => {
+    setClosed(!isClosed);
+  };
+
   return (
     <section className="splash background--black" id="splashPage">
       <div className="container">
-        <div className="browser__wrapper">
+        <div className={`browser__wrapper ${isClosed ? "isClosed" : ""}`}>
           <div className="browser">
             <div className="browser__bar">
-              <span></span>
-              <span></span>
-              <span></span>
+              <span
+                className="browser__ellipse browser__ellipse--close"
+                onClick={() => {
+                  handleClose();
+                }}
+              ></span>
+              <span
+                className="browser__ellipse browser__ellipse--minimise"
+                onClick={() => {
+                  handleClose();
+                }}
+              ></span>
+              <span className="browser__ellipse browser__ellipse--full-screen"></span>
             </div>
             <div className="browser__window text-center">
               <p>Branding</p>
@@ -23,6 +39,11 @@ function Splash() {
               <span></span>
               <span></span>
               <span></span>
+            </div>
+            <div className="browser__window text-center">
+              {Icons.Code}
+
+              {Icons.HeartPink}
             </div>
           </div>
         </div>
