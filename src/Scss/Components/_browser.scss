@@ -11,17 +11,12 @@
 
     &.isClosed {
       .browser {
-        max-width: 94px;
-        width: 100%;
-        position: absolute;
-        bottom: -67px;
-        right: 160px;
-        height: 53px;
-    
         p,
         h1 {
-          display: none;
           opacity: 0;
+          width: 0;
+          height: 0;
+          margin: 0;
         }
 
         &--background {
@@ -37,12 +32,13 @@
   }
 
   p {
-    @include use-responsive-font('h3');
+    @include use-responsive-font("h3");
   }
 
   h1,
   p {
-    transition: display 300ms ease-in-out, opacity 300ms ease-in-out;
+    height: auto;
+    transition: margin 100ms ease-in-out, opacity 100ms ease-in-out, width 600ms ease-in-out, height 300ms ease-in-out;
   }
 
   &--background {
@@ -120,6 +116,34 @@
 
 @include media-breakpoint-up(md) {
   .browser {
+    position: absolute;
+    height: 406px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+
+    &__wrapper {
+      min-height: 406px;
+
+      &.isClosed {
+        .browser {
+          max-width: 124px;
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          right: 160px;
+          height: 138px;
+          left: auto;
+          transform: translateY(-50%);
+
+          &--background {
+            position: relative;
+            left: 28%;
+          }
+        }
+      }
+    }
+
     &--background {
       display: block;
       height: 406px;
