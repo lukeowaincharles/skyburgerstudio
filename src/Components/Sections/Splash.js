@@ -14,7 +14,7 @@ function Splash() {
     <section className="splash background--black" id="splashPage">
       <div className="container">
         <div className={`browser__wrapper ${isClosed ? "isClosed" : ""}`}>
-          <div className="browser">
+          <div className="browser browser--splash">
             {width >= 992 ? (
               <div className="browser__bar">
                 <span
