@@ -21,6 +21,7 @@ import { ReactComponent as WeLoveWebsitesIcon } from "../Assets/images/we-love-w
 import { ReactComponent as BrowserIcon } from "../Assets/images/browser--black.svg";
 import { ReactComponent as BrowserColourIcon } from "../Assets/images/browser--colour.svg";
 import { ReactComponent as QuotesIcon } from "../Assets/images/quotes.svg";
+import { ReactComponent as LogoIcon } from "../Assets/images/logo.svg";
 
 export const Close = <CloseIcon className="icon icon--close" />;
 export const Code = <CodeIcon className="icon icon--code" />;
@@ -49,3 +50,4 @@ export const WeLoveWebsites = (
 export const Browser = <BrowserIcon className="icon icon--browser" />;
 export const BrowserColour = <BrowserColourIcon className="icon icon--browser--colour" />
 export const Quotes = <QuotesIcon className="icon icon--quotes" />;
+export const Logo = <LogoIcon className="icon icon--logo" />;
