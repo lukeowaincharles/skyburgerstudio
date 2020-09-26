@@ -17,8 +17,7 @@
   h1,
   p {
     height: auto;
-    transition: margin 100ms ease-in-out, opacity 100ms ease-in-out,
-      width 600ms ease-in-out, height 300ms ease-in-out;
+    transition: font-size 300ms ease-in-out;
   }
 
   .browser__window {
@@ -35,12 +34,14 @@
 
     &.isClosed {
       .browser {
-        p,
-        h1 {
-          opacity: 0;
-          width: 0;
-          height: 0;
-          margin: 0;
+
+        .icon {
+          width: 66px;
+          height: 66px;
+        }
+
+        &__window {
+          padding: 12px 15px;;
         }
 
         &--background {

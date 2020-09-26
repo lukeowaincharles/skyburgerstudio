@@ -39,9 +39,17 @@ function Splash() {
               </div>
             )}
             <div className="browser__window text-center">
-              <p>Branding</p>
-              <h1 className="h1--large letter__space">Skyburger Studio</h1>
-              <p>Web design</p>
+              {isClosed ? (
+                <span>
+                  {Icons.Logo}
+                </span>
+              ) : (
+                <span>
+                  <p>Branding</p>
+                  <h1 className="h1--large letter__space">Skyburger Studio</h1>
+                  <p>Web design</p>
+                </span>
+              )}
             </div>
           </div>
           <div className="browser--background">
