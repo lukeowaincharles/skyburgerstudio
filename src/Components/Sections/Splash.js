@@ -1,7 +1,10 @@
 import React from "react";
 import * as Icons from "../Icons";
+import useWindowWidth from "../Utilities/WindowWidth";
+import MotionSvgs from "./MotionSvgs";
 
 function Splash() {
+  const width = useWindowWidth();
 
   return (
     <section className="splash background--black" id="splashPage">
@@ -20,20 +23,24 @@ function Splash() {
           <div className="browser--background"></div>
         </div>
       </div>
-      <div
-        className="splash__icons"
-      >
+      <div className="splash__icons">
         <div className="icons__wrapper">
-          {Icons.Code}
+          {width < 768 ? (
+            <span>
+              {Icons.Code}
 
-          {Icons.HeartPink}
+              {Icons.HeartPink}
 
-          {Icons.Smiles}
-          {Icons.Peace}
+              {Icons.Smiles}
+              {Icons.Peace}
 
-          {Icons.Cursor}
+              {Icons.Cursor}
 
-          {Icons.Hash}
+              {Icons.Hash}
+            </span>
+          ) : (
+            <MotionSvgs />
+          )}
         </div>
       </div>
     </section>

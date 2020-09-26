@@ -44,8 +44,34 @@
 
 @include media-breakpoint-up(md) {
   .splash {
+    .icons__wrapper div {
+      background: transparent;
+      border-radius: 30px;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      bottom: 30px;
+      left: 16%;
+    }
+
+    .drag-area {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      bottom: 30px;
+      left: 16%;
+    }
+
     &__icons {
       .icon {
+        &:hover {
+          cursor: grab;
+        }
+
+        &:active {
+          cursor: grabbing;
+        }
+
         &--code {
           bottom: 30px;
           left: 16%;
