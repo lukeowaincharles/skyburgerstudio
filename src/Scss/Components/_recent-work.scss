@@ -19,6 +19,14 @@
         transition: 300ms ease-in-out opacity;
       }
     }
+    
+    &.project--1 {
+      .project__image-wrapper {
+        &:after {
+          background-color: color(orange--dark);
+        }
+      }
+    }
 
     .btn {
       font-size: 16px;
