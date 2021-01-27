@@ -22,7 +22,7 @@ function Contact() {
           <h2>{CONTENT[0].title}</h2>
           <p>{CONTENT[0].text}</p>
         </div>
-        <p><a class="email--white" target="_blank" rel="noopener noreferrer" href="mailto:hello@skyburgerstudio.co.uk">hello@skyburgerstudio.co.uk</a></p>
+        <p><a className="email--white" target="_blank" rel="noopener noreferrer" href="mailto:hello@skyburgerstudio.co.uk">hello@skyburgerstudio.co.uk</a></p>
         {/* <div className="form__wrapper" id="mc_embed_signup"> 
           <form
             action="https://skyburgerstudio.us10.list-manage.com/subscribe/post?u=280fcafeadb0bc02f7d812bfc&amp;id=a3337076c3"
