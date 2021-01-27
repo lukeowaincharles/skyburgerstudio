@@ -5,15 +5,15 @@ import ContactData from "../../Data/ContactData.json";
 function Contact() {
   const CONTENT = ContactData.content;
 
-  const styles = {
-    display: {
-      display: "none",
-    },
-    position: {
-      position: "absolute",
-      left: "-5000px",
-    },
-  };
+  // const styles = {
+  //   display: {
+  //     display: "none",
+  //   },
+  //   position: {
+  //     position: "absolute",
+  //     left: "-5000px",
+  //   },
+  // };
 
   return (
     <section className="contact background--black" id="contact" name="#contact">
@@ -22,7 +22,8 @@ function Contact() {
           <h2>{CONTENT[0].title}</h2>
           <p>{CONTENT[0].text}</p>
         </div>
-        <div className="form__wrapper" id="mc_embed_signup">
+        <p><a class="email--white" target="_blank" rel="noopener noreferrer" href="mailto:hello@skyburgerstudio.co.uk">hello@skyburgerstudio.co.uk</a></p>
+        {/* <div className="form__wrapper" id="mc_embed_signup"> 
           <form
             action="https://skyburgerstudio.us10.list-manage.com/subscribe/post?u=280fcafeadb0bc02f7d812bfc&amp;id=a3337076c3"
             method="post"
@@ -142,7 +143,7 @@ function Contact() {
                   style={styles.display}
                 ></div>
               </div>
-              {/* <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> */}
+              {/* <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> 
               <div style={styles.position} aria-hidden="true">
                 <input
                   type="text"
@@ -161,7 +162,7 @@ function Contact() {
               </div>
             </div>
           </form>
-        </div>
+        </div>*/}
 
         {/* <!--End mc_embed_signup--> */}
       </div>
