@@ -16,9 +16,9 @@ function Splash() {
             <span></span>
           </div>
           <div className="browser__window text-center">
-            <p>Branding</p>
+            {/* <p>Branding</p> */}
             <h1 className="h1--large letter__space">Skyburger Studio</h1>
-            <p>Web design</p>
+            {/* <p>Web design</p> */}
           </div>
           <div className="browser--background"></div>
         </div>
