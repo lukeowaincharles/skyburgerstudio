@@ -2,6 +2,9 @@
   padding-top: 41px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 97px);
 
   &__icons {
     .icon {
@@ -44,6 +47,8 @@
 
 @include media-breakpoint-up(md) {
   .splash {
+    min-height: calc(100vh - 78px);
+    
     .icons__wrapper div {
       background: transparent;
       border-radius: 30px;
